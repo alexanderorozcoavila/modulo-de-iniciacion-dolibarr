@@ -24,132 +24,110 @@
     },
     "body-list":{
         "0":{
-            "title":"",
-            "icon":"",
-            "description":"",
+            "title":"Clientes y Proveedores",
+            "icon":"fa-address-book",
+            "description":"Registre todas las personas que interactuan con su empresa",
             "list-links":{
                 "0":{
-                    "title":"",
+                    "title":"Crear un cliente",
                     "link":"",
                     "css":""
                 },
                 "2":{
-                    "title":"",
+                    "title":"Crear un proveedor",
                     "link":"",
                     "css":""
                 },
                 "3":{
-                    "title":"",
+                    "title":"Crear un contrato",
                     "link":"",
                     "css":""
                 }
             }
         },
         "1":{
-            "title":"",
-            "icon":"",
-            "description":"",
+            "title":"Productos y Servicios",
+            "icon":"fa-android",
+            "description":"Cargue su catalogo de productos y servicios",
             "list-links":{
                 "0":{
-                    "title":"",
+                    "title":"Crear catalogo",
                     "link":"",
                     "css":""
                 },
                 "2":{
-                    "title":"",
+                    "title":"Crear producto",
                     "link":"",
                     "css":""
                 },
                 "3":{
-                    "title":"",
+                    "title":"Crear Servicio",
+                    "link":"",
+                    "css":""
+                },
+                "4":{
+                    "title":"Aumentar precios",
                     "link":"",
                     "css":""
                 }
             }
         },
         "2":{
-            "title":"",
-            "icon":"",
-            "description":"",
+            "title":"Comercial",
+            "icon":"fa-arrow-circle-down",
+            "description":"Gestione los pedidos y presupuestos",
             "list-links":{
                 "0":{
-                    "title":"",
+                    "title":"Crear presupuesto",
                     "link":"",
                     "css":""
                 },
                 "2":{
-                    "title":"",
-                    "link":"",
-                    "css":""
-                },
-                "3":{
-                    "title":"",
+                    "title":"Crear pedido",
                     "link":"",
                     "css":""
                 }
             }
         },
         "3":{
-            "title":"",
-            "icon":"",
-            "description":"",
+            "title":"Financiera",
+            "icon":"fa-align-justify",
+            "description":"Gestione facturas para sus pedidos",
             "list-links":{
                 "0":{
-                    "title":"",
+                    "title":"Crear una factura",
                     "link":"",
                     "css":""
                 },
                 "2":{
-                    "title":"",
+                    "title":"Crear un pago",
                     "link":"",
                     "css":""
                 },
                 "3":{
-                    "title":"",
+                    "title":"Ver estados contables",
+                    "link":"",
+                    "css":""
+                },
+                "4":{
+                    "title":"Configurar factura electronica afip",
                     "link":"",
                     "css":""
                 }
             }
         },
         "4":{
-            "title":"",
-            "icon":"",
-            "description":"",
+            "title":"Cuentas",
+            "icon":"fa-map",
+            "description":"Cree sus cuentas y registre todas sus transacciones",
             "list-links":{
                 "0":{
-                    "title":"",
+                    "title":"Crear cuentas",
                     "link":"",
                     "css":""
                 },
                 "2":{
-                    "title":"",
-                    "link":"",
-                    "css":""
-                },
-                "3":{
-                    "title":"",
-                    "link":"",
-                    "css":""
-                }
-            }
-        },
-        "5":{
-            "title":"",
-            "icon":"",
-            "description":"",
-            "list-links":{
-                "0":{
-                    "title":"",
-                    "link":"",
-                    "css":""
-                },
-                "2":{
-                    "title":"",
-                    "link":"",
-                    "css":""
-                },
-                "3":{
-                    "title":"",
+                    "title":"Ver libro",
                     "link":"",
                     "css":""
                 }

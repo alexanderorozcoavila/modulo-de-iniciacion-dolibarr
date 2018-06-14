@@ -102,7 +102,7 @@ echo '
     <div class="card mb-12 box-shadow">
         <div class="card-header">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#">Inicio</a>
+                <a class="navbar-brand" href="'.$data_decode['header']['home']['link'].'">'.$langs->trans($data_decode['header']['home']['label']).'</a>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
@@ -110,43 +110,84 @@ echo '
                     
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <a class="navbar-brand" href="#">ico</a>
-                    <a class="navbar-brand" href="#">comenzar</a>
+                    <button type="button" class="btn btn-outline-danger">'.$langs->trans($data_decode['header']['init']['label']).' <span class="badge danger">5</span></button>
+                    <span data-toggle="modal" data-target="#exampleModal" class="fa fa-question-circle" style="font-size:25px;color:red; margin-left:5px;"></span>
                 </form>
                 </div>
             </nav>
         </div>
-        <div class="card-body">
-            <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-            <li>10 users included</li>
-            <li>2 GB of storage</li>
-            <li>Email support</li>
-            <li>Help center access</li>
+        <div class="card-body">';
+
+
+        foreach ($data_decode['body-list'] as $d) {
+            echo '
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand">
+            <span class="fa '.$d['icon'].'" style="font-size:50px;color:#3F729B; margin-left:5px;"></span>
+            </a>
+            <a class="navbar-brand">
+            '.$d['title'].'
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                
             </ul>
-            <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
-        </div>
+            <div class="form-inline my-2 my-lg-0">';
+            foreach ($d['list-links'] as $a) {
+                echo '<a class="navbar-brand" href="'.$a['link'].'">
+                '.$a['title'].'
+                </a>';
+            }        
+            echo '</div>
+            </div>
+        </nav>';
+        }
+
+            
+        echo '</div>
     </div>
 </div>';
 
-
-
-
-foreach ($data_decode['header'] as $d) {
-    print_r($d);
-}
-
-
-//detail module
-foreach ($data_decode['body-list'] as $d) {
-    print_r($d);
-}
 echo '</div>';
 
 
 dol_include_once('/onboading/core/modules/modOnboading.class.php');
 $tmpmodule = new modOnboading($db);
-print $tmpmodule->getDescLong();
+//print $tmpmodule->getDescLong();
+
+echo '<!-- Modal -->
+<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <h4 class="text-center" style="color:#90caf9;margin-bottom: 50px;">Como te podemos ayudar</h4>
+      <div class="card-deck mb-3 text-center">
+      <div class="card mb-4 box-shadow">
+      <span class="fa fa-clipboard" style="font-size:50px;color:#3F729B; margin-left:5px;margin-top:20px;margin-bottom:30px;"></span>
+        Guia de Inicio
+        <br><br><br><br>
+      </div>
+      <div class="card mb-4 box-shadow">
+      <span class="fa fa-envelope" style="font-size:50px;color:#3F729B; margin-left:5px;margin-top:20px;margin-bottom:30px;"></span>
+      Haz una pregunta
+      <br><br><br><br>
+      </div>
+      <div class="card mb-4 box-shadow">
+      <span class="fa fa-search" style="font-size:50px;color:#3F729B; margin-left:5px;margin-top:20px;margin-bottom:30px;"></span>
+      Busca en nuestro centro de ayuda
+      <br><br><br><br>
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>';
 
 // Page end
 dol_fiche_end();

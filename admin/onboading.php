@@ -68,7 +68,7 @@ $action = GETPOST('action', 'alpha');
 
 $form = new Form($db);
 
-$page_name = "MyModuleAbout";
+$page_name = "Onboading";
 llxHeader('', $langs->trans($page_name));
 
 // Subheader
@@ -77,19 +77,72 @@ $linkback = '<a href="' . DOL_URL_ROOT . '/admin/modules.php">'
 print load_fiche_titre($langs->trans($page_name), $linkback);
 
 // Configuration header
-$head = onboadingAdminPrepareHead();
-dol_fiche_head(
-	$head,
-	'about',
-	$langs->trans("MyModuleName"),
-	0,
-	'mymodule@mymodule'
-);
+//$head = onboadingAdminPrepareHead();
+//dol_fiche_head(
+//	$head,
+//	'about',
+//	$langs->trans("Onboading"),
+//	0,
+//	'mymodule@mymodule'
+//);
 
 // About page goes here
-echo $langs->trans("MyModuleAboutPage");
+//echo $langs->trans("MyModuleAboutPage");
 
-echo '<br>';
+
+$data = file_get_contents("../config/index.json");
+$data_decode = json_decode($data, true);
+
+//header module
+echo '<div class="container-fluid">';
+
+
+echo '
+<div class="card-deck mb-3 text-center">
+    <div class="card mb-12 box-shadow">
+        <div class="card-header">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">Inicio</a>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    
+                    
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <a class="navbar-brand" href="#">ico</a>
+                    <a class="navbar-brand" href="#">comenzar</a>
+                </form>
+                </div>
+            </nav>
+        </div>
+        <div class="card-body">
+            <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+            <li>10 users included</li>
+            <li>2 GB of storage</li>
+            <li>Email support</li>
+            <li>Help center access</li>
+            </ul>
+            <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
+        </div>
+    </div>
+</div>';
+
+
+
+
+foreach ($data_decode['header'] as $d) {
+    print_r($d);
+}
+
+
+//detail module
+foreach ($data_decode['body-list'] as $d) {
+    print_r($d);
+}
+echo '</div>';
+
 
 dol_include_once('/onboading/core/modules/modOnboading.class.php');
 $tmpmodule = new modOnboading($db);

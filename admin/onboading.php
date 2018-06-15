@@ -147,10 +147,113 @@ echo '<!-- Bottom modal -->
           <label for="modal-trigger-center" class="o-close"></label>
           <div class="modal-wrap a-center">
             <label for="modal-trigger-center" class="close">x</label>
-            <h2>This is the modal content</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique cum sequi maxime officia provident voluptatibus aut! Non autem asperiores repellat architecto laboriosam officiis ab libero enim illo animi, error alias.
-            </p>
+                <div class="cabecera_modal_init">
+                    <table height="40px" cellspacing="0" cellpadding="0">
+                        <tr height="24px">
+                            <td style="vertical-align:bottom;">
+                                <span class="text_modal_init_title">Comenzar</span>
+                            </td>
+                        </tr>
+                        <tr height="16px">
+                            <td style="vertical-align: baseline;">
+                                <span class="text_modal_init_subtitle">Completá estos 3 simples pasos que realizamos para vos</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="cabecera_modal_circle_progress">
+                    <div class="c100 p12 small green">
+                        <span>12%</span>
+                        <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="div_line_modal">
+                    <hr class="Line">
+                </div>
+
+                <div class="div_line_modal_correo">
+                    <div class="div_icon_modal_correo">
+                    <img src="../img/ic-markunread.png"
+                         srcset="../img/ic-markunread@2x.png 2x,
+                                 ../img/ic-markunread@3x.png 3x"
+                         class="ic_markunread">
+                    </div>
+                    <div class="div_text_modal_correo">
+                    <span class="modal_title_1">Configurar el correo electrónico</span>
+                    <br>
+                    <span class="modal_title_2">Integre su dirección de correo electrónico para sus emails de salida</span>
+                    </div>
+                    <div class="div_divider_modal_correo">
+                        <hr class="Line3">
+                    </div>
+                    <div class="div_status_modal_correo">
+                        <table width="100%" height="100%">
+                            <tr>
+                                <td align="center">
+                                <span class="text_status_modal_inactive">X SIN COMPLETAR</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="div_line_modal_empresa">
+                    <div class="div_icon_modal_correo">
+                    <img src="../img/ic-markunread.png"
+                            srcset="../img/ic-markunread@2x.png 2x,
+                                    ../img/ic-markunread@3x.png 3x"
+                            class="ic_markunread">
+                    </div>
+                    <div class="div_text_modal_correo">
+                    <span class="modal_title_1">Cargar datos de empresa</span>
+                    <br>
+                    <span class="modal_title_2">Complete los datos de su empresa que luego verá en las facturas</span>
+                    </div>
+                    <div class="div_divider_modal_correo">
+                        <hr class="Line3_active">
+                    </div>
+                    <div class="div_status_modal_correo">
+                        <table width="100%" height="100%">
+                            <tr>
+                                <td align="center">
+                                    <span class="text_status_modal_active">
+                                        <img src="../img/path-2.png" srcset="../img/path-2@2x.png 2x,
+                                             ../img/path-2@3x.png 3x"
+                                     class="Path-2"> TERMINADO
+                                     
+                                     </span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="div_line_modal_equipo">
+                    <div class="div_icon_modal_correo">
+                    <img src="../img/ic-markunread.png"
+                        srcset="../img/ic-markunread@2x.png 2x,
+                                ../img/ic-markunread@3x.png 3x"
+                        class="ic_markunread">
+                    </div>
+                    <div class="div_text_modal_correo">
+                    <span class="modal_title_1">Invita a tu equipo</span>
+                    <br>
+                    <span class="modal_title_2">Genere nuevos usuarios para empezar a trabajar</span>
+                    </div>
+                    <div class="div_divider_modal_correo">
+                        <hr class="Line3">
+                    </div>
+                    <div class="div_status_modal_correo">
+                        <table width="100%" height="100%">
+                            <tr>
+                                <td align="center">
+                                <span class="text_status_modal_inactive">X SIN COMPLETAR</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                
           </div>
         </div>
       </div>

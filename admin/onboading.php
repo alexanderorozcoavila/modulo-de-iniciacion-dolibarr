@@ -93,7 +93,7 @@ $data_decode = json_decode($data, true);
 print '
 <div class="Rectangle-5">
     <div class="Inicio">
-        <span>'.$data_decode['header']['home']['label'].'</span>
+    <label>'.$data_decode['header']['home']['label'].'</label>
     </div>
     
     <div class="Group-9">
@@ -101,7 +101,7 @@ print '
         srcset="'.$data_decode['header']['help']['icon-srcset'].'">    
     </div>
     <div class="Rectangle-11">
-    <div class="Comenzar">'.$data_decode['header']['init']['label'].'</div>
+    <div class="Comenzar"><label for="modal-trigger-center" class="open-modal">'.$data_decode['header']['init']['label'].'</label></div>
     <div class="layer">9</div>
     </div>
 
@@ -139,6 +139,23 @@ print '
     }
 echo '</div>';
 
+
+echo '<!-- Bottom modal -->
+<div class="modal">
+        <input id="modal-trigger-center" class="checkbox" type="checkbox">
+        <div class="modal-overlay">
+          <label for="modal-trigger-center" class="o-close"></label>
+          <div class="modal-wrap a-center">
+            <label for="modal-trigger-center" class="close">x</label>
+            <h2>This is the modal content</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique cum sequi maxime officia provident voluptatibus aut! Non autem asperiores repellat architecto laboriosam officiis ab libero enim illo animi, error alias.
+            </p>
+          </div>
+        </div>
+      </div>
+<!-- End Modal -->
+<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>';
 /*
 
 

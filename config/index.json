@@ -2,8 +2,8 @@
     "header": {
         "home":{
             "label":"Inicio",
-            "link":"",
-            "css":"",
+            "link":"#",
+            "css":"Inicio",
             "icon":"",
             "onclick":""
         },
@@ -18,15 +18,17 @@
             "label":"Ayuda",
             "link":"",
             "css":"",
-            "icon":"",
+            "icon-src":"../img/group-9.png",
+            "icon-srcset":"../img/group-9@2x.png 2x,../img/group-9@3x.png 3x",
             "onclick":""
         }
     },
     "body-list":{
         "0":{
             "title":"Clientes y Proveedores",
-            "icon":"fa-address-book",
-            "description":"Registre todas las personas que interactuan con su empresa",
+            "icon-src":"../img/group-2.png",
+            "icon-srcset":"../img/group-2@2x.png 2x,../img/group-2@3x.png 3x",
+            "description":"Registre todas las personas que interactúan con su empresa",
             "list-links":{
                 "0":{
                     "title":"Crear un cliente",
@@ -47,8 +49,9 @@
         },
         "1":{
             "title":"Productos y Servicios",
-            "icon":"fa-android",
-            "description":"Cargue su catalogo de productos y servicios",
+            "icon-src":"../img/group-3.png",
+            "icon-srcset":"../img/group-3@2x.png 2x,../img/group-3@3x.png 3x",
+            "description":"Cargue su catálogo de productos o servicios",
             "list-links":{
                 "0":{
                     "title":"Crear catalogo",
@@ -74,8 +77,9 @@
         },
         "2":{
             "title":"Comercial",
-            "icon":"fa-arrow-circle-down",
-            "description":"Gestione los pedidos y presupuestos",
+            "icon-src":"../img/group-4.png",
+            "icon-srcset":"../img/group-4@2x.png 2x,../img/group-4@3x.png 3x",
+            "description":"Gestione los pedidos y presupuestos que crea para clientes o proveedores",
             "list-links":{
                 "0":{
                     "title":"Crear presupuesto",
@@ -91,8 +95,9 @@
         },
         "3":{
             "title":"Financiera",
-            "icon":"fa-align-justify",
-            "description":"Gestione facturas para sus pedidos",
+            "icon-src":"../img/group-5.png",
+            "icon-srcset":"../img/group-5@2x.png 2x,../img/group-5@3x.png 3x",
+            "description":"Genere facturas para sus pedidos realizados. Registre los pagos para cada factura.",
             "list-links":{
                 "0":{
                     "title":"Crear una factura",
@@ -110,7 +115,7 @@
                     "css":""
                 },
                 "4":{
-                    "title":"Configurar factura electronica afip",
+                    "title":"Configurar afip",
                     "link":"",
                     "css":""
                 }
@@ -118,8 +123,9 @@
         },
         "4":{
             "title":"Cuentas",
-            "icon":"fa-map",
-            "description":"Cree sus cuentas y registre todas sus transacciones",
+            "icon-src":"../img/group-7.png",
+            "icon-srcset":"../img/group-7@2x.png 2x,../img/group-7@3x.png 3x",
+            "description":"Cree sus cuentas y registre todas las transacciones que pasen por su empresa.",
             "list-links":{
                 "0":{
                     "title":"Crear cuentas",
@@ -131,6 +137,24 @@
                     "link":"",
                     "css":""
                 }
+            }
+        }
+    },
+    "5":{
+        "title":"Recursos Humanos",
+        "icon-src":"../img/group-6.png",
+        "icon-srcset":"../img/group-6@2x.png 2x,../img/group-6@3x.png 3x",
+        "description":"Tenga registro de las vacaciones o gastos de los empleados.",
+        "list-links":{
+            "0":{
+                "title":"Crear cuentas",
+                "link":"",
+                "css":""
+            },
+            "2":{
+                "title":"Ver libro",
+                "link":"",
+                "css":""
             }
         }
     }

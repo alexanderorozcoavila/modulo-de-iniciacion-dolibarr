@@ -17,9 +17,9 @@
  */
 
 /**
- * \file    htdocs/modulebuilder/template/admin/setup.php
- * \ingroup onboading
- * \brief   MyModule setup page.
+ * \file    htdocs/modulebuilder/template/admin/about.php
+ * \ingroup mymodule
+ * \brief   About page of module MyModule.
  */
 
 // Load Dolibarr environment
@@ -36,17 +36,20 @@ if (! $res && file_exists("../../main.inc.php")) $res=@include("../../main.inc.p
 if (! $res && file_exists("../../../main.inc.php")) $res=@include("../../../main.inc.php");
 if (! $res) die("Include of main fails");
 
-global $langs, $user;
-
 // Libraries
-require_once DOL_DOCUMENT_ROOT . "/core/lib/admin.lib.php";
+require_once DOL_DOCUMENT_ROOT.'/core/lib/admin.lib.php';
+require_once DOL_DOCUMENT_ROOT.'/core/lib/functions2.lib.php';
 require_once '../lib/onboading.lib.php';
-//require_once "../class/myclass.class.php";
+
 // Translations
+$langs->load("errors");
+$langs->load("admin");
 $langs->load("onboading@onboading");
 
 // Access control
-if (! $user->admin) accessforbidden();
+if (! $user->admin) {
+	accessforbidden();
+}
 
 // Parameters
 $action = GETPOST('action', 'alpha');
@@ -56,34 +59,78 @@ $action = GETPOST('action', 'alpha');
  * Actions
  */
 
-include DOL_DOCUMENT_ROOT.'/core/actions_setmoduleoptions.inc.php';
+// None
 
 
 /*
  * View
  */
 
-$page_name = "MyModuleSetup";
+$form = new Form($db);
+
+$page_name = "Onboading";
 llxHeader('', $langs->trans($page_name));
 
 // Subheader
-$linkback = '<a href="' . DOL_URL_ROOT . '/admin/modules.php">' . $langs->trans("BackToModuleList") . '</a>';
-
+$linkback = '<a href="' . DOL_URL_ROOT . '/admin/modules.php">'
+	. $langs->trans("BackToModuleList") . '</a>';
 print load_fiche_titre($langs->trans($page_name), $linkback);
 
 // Configuration header
-$head = onboadingAdminPrepareHead();
-dol_fiche_head(
-	$head,
-	'settings',
-	$langs->trans("Module500000Name"),
-	0,
-	"onboading@onboading"
-);
+//$head = onboadingAdminPrepareHead();
+//dol_fiche_head(
+//	$head,
+//	'about',
+//	$langs->trans("Onboading"),
+//	0,
+//	'mymodule@mymodule'
+//);
 
-// Setup page goes here
-echo $langs->trans("MyModuleSetupPage");
+// About page goes here
+//echo $langs->trans("MyModuleAboutPage");
+
+
+$data = file_get_contents("../config/index.json");
+$data_decode = json_decode($data, true);
+
+print '<table style="width: 100%" border="1">
+      <tbody>
+        <tr>
+          <td rowspan="1" colspan="2"><br>
+          </td>
+          <td rowspan="1" colspan="2"><br>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="1" colspan="4"><br>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="2" colspan="1"><br>
+          </td>
+          <td><br>
+          </td>
+          <td rowspan="2" colspan="1"><br>
+          </td>
+          <td rowspan="2" colspan="1"><br>
+          </td>
+        </tr>
+        <tr>
+          <td><br>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="1" colspan="4"><br>
+          </td>
+        </tr>
+      </tbody>
+    </table>';
+
+
+dol_include_once('/onboading/core/modules/modOnboading.class.php');
+$tmpmodule = new modOnboading($db);
 
 // Page end
 dol_fiche_end();
 llxFooter();
+$db->close();

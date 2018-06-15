@@ -93,7 +93,7 @@ $data_decode = json_decode($data, true);
 print '
 <div class="Rectangle-5">
     <div class="Inicio">
-        <a href="'.$data_decode['header']['home']['link'].'">'.$data_decode['header']['home']['label'].'</a>
+        <span>'.$data_decode['header']['home']['label'].'</span>
     </div>
     
     <div class="Group-9">

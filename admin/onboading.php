@@ -113,7 +113,7 @@ if (! empty($setupcompanynotcomplete))
 	$empresa_box = "div_line_modal_empresa";
     $empresa_line = "Line3";
     $empresa_text = "text_status_modal";
-    $correo_text_text = "X SIN COMPLETAR";
+    $empresa_text_text = "X SIN COMPLETAR";
 }
 
 

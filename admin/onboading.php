@@ -92,17 +92,20 @@ $correo_box = "div_line_modal_correo_active";
 $correo_line = "Line3_active";
 $correo_text = "text_status_modal_active";
 $correo_text_text = '<img src="../img/path-2.png" srcset="../img/path-2@2x.png 2x,../img/path-2@3x.png 3x"> TERMINADO';
+$c = 30;
 
 $empresa_box = "div_line_modal_empresa_active";
 $empresa_line = "Line3_active";
 $empresa_text = "text_status_modal_active";
 $empresa_text_text = '<img src="../img/path-2.png" srcset="../img/path-2@2x.png 2x,../img/path-2@3x.png 3x"> TERMINADO';
+$e = 40;
 
 
 $equipo_box = "div_line_modal_equipo_active";
 $equipo_line = "Line3_active";
 $equipo_text = "text_status_modal_active";
 $equipo_text_text = '<img src="../img/path-2.png" srcset="../img/path-2@2x.png 2x,../img/path-2@3x.png 3x"> TERMINADO';
+$q = 30;
 
 
 
@@ -114,6 +117,7 @@ if (! empty($setupcompanynotcomplete))
     $empresa_line = "Line3";
     $empresa_text = "text_status_modal";
     $empresa_text_text = "X SIN COMPLETAR";
+    $e = 0;
 }
 
 
@@ -125,6 +129,7 @@ if (! empty($setupmailnotcomplete))
     $correo_line = "Line3";
     $correo_text = "text_status_modal";
     $correo_text_text = "X SIN COMPLETAR";
+    $c = 0;
 }
 
 $sql = "SELECT u.rowid, u.lastname, u.firstname, u.admin, u.login, u.fk_soc, u.datec, u.statut";
@@ -162,8 +167,10 @@ if($num==1){
     $equipo_line = "Line3";
     $equipo_text = "text_status_modal";
     $equipo_text_text = 'X SIN COMPLETAR';
+    $q = 0;
 }
 
+$c_progress = $c + $e + $q;
 
 $data = file_get_contents("../config/list.json");
 $data_decode = json_decode($data, true);
@@ -246,8 +253,8 @@ print ' <div class="modal">
                     </table>
                 </div>
                 <div class="cabecera_modal_circle_progress">
-                    <div class="c100 p12 small green">
-                        <span>12%</span>
+                    <div class="c100 p'.$c_progress.' small green">
+                        <span>'.$c_progress.'%</span>
                         <div class="slice">
                             <div class="bar"></div>
                             <div class="fill"></div>

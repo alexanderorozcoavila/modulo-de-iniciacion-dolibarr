@@ -1,0 +1,15 @@
+{
+    "init":{
+        "title":"Comenzar",
+        "subtitle":"Completá estos 3 simples pasos que realizamos para vos",
+        "text1-correo":"Configurar el correo electrónico",
+        "text2-correo":"Integre su dirección de correo electrónico para sus emails de salida",
+        "link-correo":"#",
+        "text1-empresa":"Cargar datos de empresa",
+        "text2-empresa":"Complete los datos de su empresa que luego verá en las facturas",
+        "link-empresa":"/dolibarr/htdocs/admin/company.php?mainmenu=home",
+        "text1-equipo":"Invita a tu equipo",
+        "text2-equipo":"Genere nuevos usuarios para empezar a trabajar",
+        "link-equipo":"#"
+    }
+}

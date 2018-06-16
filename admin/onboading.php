@@ -85,78 +85,162 @@ llxHeader('', $langs->trans($page_name));
 // About page goes here
 //echo $langs->trans("MyModuleAboutPage");
 
+//print_r($conf);
 
-$data = file_get_contents("../config/index.json");
+// Show info setup company
+$correo_box = "div_line_modal_correo_active";
+$correo_line = "Line3_active";
+$correo_text = "text_status_modal_active";
+$correo_text_text = '<img src="../img/path-2.png" srcset="../img/path-2@2x.png 2x,../img/path-2@3x.png 3x"> TERMINADO';
+
+$empresa_box = "div_line_modal_empresa_active";
+$empresa_line = "Line3_active";
+$empresa_text = "text_status_modal_active";
+$empresa_text_text = '<img src="../img/path-2.png" srcset="../img/path-2@2x.png 2x,../img/path-2@3x.png 3x"> TERMINADO';
+
+
+$equipo_box = "div_line_modal_equipo_active";
+$equipo_line = "Line3_active";
+$equipo_text = "text_status_modal_active";
+$equipo_text_text = '<img src="../img/path-2.png" srcset="../img/path-2@2x.png 2x,../img/path-2@3x.png 3x"> TERMINADO';
+
+
+
+if (empty($conf->global->MAIN_INFO_SOCIETE_NOM) || empty($conf->global->MAIN_INFO_SOCIETE_COUNTRY)) $setupcompanynotcomplete=1;
+//print img_picto('','puce').' '.$langs->trans("SetupDescription3", DOL_URL_ROOT.'/admin/company.php?mainmenu=home'.(empty($setupcompanynotcomplete)?'':'&action=edit'), $langs->transnoentities("Setup"), $langs->transnoentities("MenuCompanySetup"));
+if (! empty($setupcompanynotcomplete))
+{
+	$empresa_box = "div_line_modal_empresa";
+    $empresa_line = "Line3";
+    $empresa_text = "text_status_modal";
+    $correo_text_text = "X SIN COMPLETAR";
+}
+
+
+if (empty($conf->global->MAIN_MAIL_SMTP_SERVER) || empty($conf->global->MAIN_MAIL_SMTP_PORT)) $setupmailnotcomplete=1;
+//print img_picto('','puce').' '.$langs->trans("SetupDescription3", DOL_URL_ROOT.'/admin/company.php?mainmenu=home'.(empty($setupcompanynotcomplete)?'':'&action=edit'), $langs->transnoentities("Setup"), $langs->transnoentities("MenuCompanySetup"));
+if (! empty($setupmailnotcomplete))
+{
+	$correo_box = "div_line_modal_correo";
+    $correo_line = "Line3";
+    $correo_text = "text_status_modal";
+    $correo_text_text = "X SIN COMPLETAR";
+}
+
+$sql = "SELECT u.rowid, u.lastname, u.firstname, u.admin, u.login, u.fk_soc, u.datec, u.statut";
+$sql.= ", u.entity";
+$sql.= ", u.ldap_sid";
+$sql.= ", u.photo";
+$sql.= ", u.admin";
+$sql.= ", u.email";
+$sql.= ", u.skype";
+$sql.= ", s.nom as name";
+$sql.= ", s.code_client";
+$sql.= ", s.canvas";
+$sql.= " FROM ".MAIN_DB_PREFIX."user as u";
+$sql.= " LEFT JOIN ".MAIN_DB_PREFIX."societe as s ON u.fk_soc = s.rowid";
+if (! empty($conf->multicompany->enabled) && $conf->entity == 1 && ($conf->global->MULTICOMPANY_TRANSVERSE_MODE || ($user->admin && ! $user->entity)))
+{
+	$sql.= " WHERE u.entity IS NOT NULL";
+}
+else
+{
+	$sql.= " WHERE u.entity IN (0,".$conf->entity.")";
+}
+if (!empty($socid)) $sql.= " AND u.fk_soc = ".$socid;
+$sql.= $db->order("u.datec","DESC");
+$sql.= $db->plimit($max);
+
+$resql=$db->query($sql);
+if ($resql)
+{
+    $num = $db->num_rows($resql);
+}
+
+if($num==1){
+    $equipo_box = "div_line_modal_equipo";
+    $equipo_line = "Line3";
+    $equipo_text = "text_status_modal";
+    $equipo_text_text = 'X SIN COMPLETAR';
+}
+
+
+$data = file_get_contents("../config/list.json");
 $data_decode = json_decode($data, true);
 
 
-print '
-<div class="Rectangle-5">
-    <div class="Inicio">
-    <label>'.$data_decode['header']['home']['label'].'</label>
-    </div>
-    
-    <div class="Group-9">
-        <img src="'.$data_decode['header']['help']['icon-src'].'" 
-        srcset="'.$data_decode['header']['help']['icon-srcset'].'">    
-    </div>
-    <div class="Rectangle-11">
-    <div class="Comenzar"><label for="modal-trigger-center" class="open-modal">'.$data_decode['header']['init']['label'].'</label></div>
-    <div class="layer">9</div>
-    </div>
-
-    <div class="div_line">
-        <hr class="Line">
-    </div>';
-
-    foreach ($data_decode['body-list'] as $d) {
-    echo '    <div class="div_list_img">
-            <img src="'.$d['icon-src'].'" class="img_list_center"/>
-        </div>
-        <div class="div_list_text">
-        <table height="90px" cellspacing="0" cellpadding="0">
-            <tr height="45px">
-                <td style="vertical-align:bottom;">
-                    <span class="title_list">'.$d['title'].'</span>
-                </td>
-            </tr>
-            <tr>
-                <td style="vertical-align: baseline;">
-                    <span class="description_list">'.$d['description'].'</span>
-                </td>
-            </tr>
-        </table>
-        </div>
-        <div class="div_list_link">';
-        foreach ($d['list-links'] as $a) {
-        echo '<div class="div_list_link_item"><a href="'.$a['link'].'">'.$a['title'].'</a></div>';
-        }
-        echo '</div>
-
+print ' <div class="Rectangle-5">
+            <div class="Inicio">
+                <label>'.$data_decode['header']['home']['label'].'</label>
+            </div>
+            <div class="Group-9">
+                <label for="modal-trigger-center2" class="open-modal">
+                    <img src="'.$data_decode['header']['help']['icon-src'].'" 
+                    srcset="'.$data_decode['header']['help']['icon-srcset'].'">
+                </label>    
+            </div>
+            <div class="Rectangle-11">
+                <div class="Comenzar">
+                    <label for="modal-trigger-center" class="open-modal">
+                        '.$data_decode['header']['init']['label'].'
+                    </label>
+                </div>
+                <div class="layer">9</div>
+            </div>
+            <div class="div_line">
+                <hr class="Line">
+            </div>';
+foreach ($data_decode['body-list'] as $d) {
+print '     <div class="div_list_img">
+                <img src="'.$d['icon-src'].'" class="img_list_center"/>
+            </div>
+            <div class="div_list_text">
+                <table height="90px" cellspacing="0" cellpadding="0">
+                    <tr height="45px">
+                        <td style="vertical-align:bottom;">
+                            <span class="title_list">'.$d['title'].'</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: baseline;">
+                            <span class="description_list">'.$d['description'].'</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="div_list_link">';
+foreach ($d['list-links'] as $a) {
+print '     <div class="div_list_link_item">
+                <a href="'.$a['link'].'">'.$a['title'].'</a>
+            </div>';
+}
+print ' </div>
         <div class="div_line_list">
             <hr class="Line">
         </div>';
-    }
-echo '</div>';
+}
+print ' </div>';
 
+//inicio de modal
+$modal = file_get_contents("../config/modal.json");
+$modal_decode = json_decode($modal, true);
 
-echo '<!-- Bottom modal -->
-<div class="modal">
-        <input id="modal-trigger-center" class="checkbox" type="checkbox">
-        <div class="modal-overlay">
-          <label for="modal-trigger-center" class="o-close"></label>
-          <div class="modal-wrap a-center">
-            <label for="modal-trigger-center" class="close">x</label>
+print ' <div class="modal">
+            <input id="modal-trigger-center" class="checkbox" type="checkbox">
+            <div class="modal-overlay">
+                <label for="modal-trigger-center" class="o-close"></label>
+            <div class="modal-wrap a-center">
+                <label for="modal-trigger-center" class="close">x</label>
                 <div class="cabecera_modal_init">
                     <table height="40px" cellspacing="0" cellpadding="0">
                         <tr height="24px">
                             <td style="vertical-align:bottom;">
-                                <span class="text_modal_init_title">Comenzar</span>
+                                <span class="text_modal_init_title">'.$modal_decode['init']['title'].'</span>
                             </td>
                         </tr>
                         <tr height="16px">
                             <td style="vertical-align: baseline;">
-                                <span class="text_modal_init_subtitle">Completá estos 3 simples pasos que realizamos para vos</span>
+                                <span class="text_modal_init_subtitle">'.$modal_decode['init']['subtitle'].'</span>
                             </td>
                         </tr>
                     </table>
@@ -174,31 +258,32 @@ echo '<!-- Bottom modal -->
                     <hr class="Line">
                 </div>
 
-                <div class="div_line_modal_correo">
+                <div class="'.$correo_box.'">
                     <div class="div_icon_modal_correo">
-                    <img src="../img/ic-markunread.png"
+                        <img src="../img/ic-markunread.png"
                          srcset="../img/ic-markunread@2x.png 2x,
                                  ../img/ic-markunread@3x.png 3x"
                          class="ic_markunread">
                     </div>
                     <div class="div_text_modal_correo">
-                    <span class="modal_title_1">Configurar el correo electrónico</span>
-                    <br>
-                    <span class="modal_title_2">Integre su dirección de correo electrónico para sus emails de salida</span>
+                        <a class="modal_title_1" href="'.$modal_decode['init']['link-correo'].'">'.$modal_decode['init']['text1-correo'].'</a>
+                        <br>
+                        <span class="modal_title_2">'.$modal_decode['init']['text2-correo'].'</span>
                     </div>
                     <div class="div_divider_modal_correo">
-                        <hr class="Line3">
+                        <hr class="'.$correo_line.'">
                     </div>
                     <div class="div_status_modal_correo">
                         <table width="100%" height="100%">
                             <tr>
                                 <td align="center">
-                                <span class="text_status_modal_inactive">X SIN COMPLETAR</span></td>
+                                <span class="'.$correo_text.'">'.$correo_text_text.'</span></td>
                             </tr>
                         </table>
                     </div>
                 </div>
-                <div class="div_line_modal_empresa">
+
+                <div class="'.$empresa_box.'">
                     <div class="div_icon_modal_correo">
                     <img src="../img/ic-markunread.png"
                             srcset="../img/ic-markunread@2x.png 2x,
@@ -206,76 +291,114 @@ echo '<!-- Bottom modal -->
                             class="ic_markunread">
                     </div>
                     <div class="div_text_modal_correo">
-                    <span class="modal_title_1">Cargar datos de empresa</span>
-                    <br>
-                    <span class="modal_title_2">Complete los datos de su empresa que luego verá en las facturas</span>
+                        <a class="modal_title_1" href="'.$modal_decode['init']['link-empresa'].'">'.$modal_decode['init']['text1-empresa'].'</a>
+                        <br>
+                        <span class="modal_title_2">'.$modal_decode['init']['text2-empresa'].'</span>
                     </div>
                     <div class="div_divider_modal_correo">
-                        <hr class="Line3_active">
+                        <hr class="'.$empresa_line.'">
                     </div>
                     <div class="div_status_modal_correo">
                         <table width="100%" height="100%">
                             <tr>
                                 <td align="center">
-                                    <span class="text_status_modal_active">
-                                        <img src="../img/path-2.png" srcset="../img/path-2@2x.png 2x,
-                                             ../img/path-2@3x.png 3x"
-                                     class="Path-2"> TERMINADO
-                                     
+                                    <span class="'.$empresa_text.'">
+                                        '.$empresa_text_text.' 
                                      </span>
                                 </td>
                             </tr>
                         </table>
                     </div>
                 </div>
-                <div class="div_line_modal_equipo">
+
+                <div class="'.$equipo_box.'">
                     <div class="div_icon_modal_correo">
-                    <img src="../img/ic-markunread.png"
+                        <img src="../img/ic-markunread.png"
                         srcset="../img/ic-markunread@2x.png 2x,
                                 ../img/ic-markunread@3x.png 3x"
                         class="ic_markunread">
                     </div>
                     <div class="div_text_modal_correo">
-                    <span class="modal_title_1">Invita a tu equipo</span>
-                    <br>
-                    <span class="modal_title_2">Genere nuevos usuarios para empezar a trabajar</span>
+                        <a class="modal_title_1" href="'.$modal_decode['init']['link-equipo'].'">'.$modal_decode['init']['text1-equipo'].'</a>
+                        <br>
+                        <span class="modal_title_2">'.$modal_decode['init']['text2-equipo'].'</span>
                     </div>
                     <div class="div_divider_modal_correo">
-                        <hr class="Line3">
+                        <hr class="'.$equipo_line.'">
                     </div>
                     <div class="div_status_modal_correo">
                         <table width="100%" height="100%">
                             <tr>
                                 <td align="center">
-                                <span class="text_status_modal_inactive">X SIN COMPLETAR</span></td>
+                                <span class="'.$equipo_text.'">'.$equipo_text_text.'</span></td>
                             </tr>
                         </table>
                     </div>
-                </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+<!-- End Modal -->  
 
-                
+    <div class="modal">
+        <input id="modal-trigger-center2" class="checkbox" type="checkbox">
+        <div class="modal-overlay">
+            <label for="modal-trigger-center2" class="o-close"></label>
+            <div class="modal-wrap a-center" style="width: 704px;height: 344px;">
+            <label for="modal-trigger-center2" class="close">X</label>
+            <div class="div_title_modal_help">
+                <table width="100%" height="100%">
+                    <tr>
+                        <td align="center">
+                            <span class="title_modal_help">¿Cómo te podemos ayudar?</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="item1_modal_help">
+                <div class="img_help_modal_1">
+                    <img src="../img/group-12.png" srcset="../img/group-12@2x.png 2x,../img/group-12@3x.png 3x">
+                </div>
+                <div class="box_help_modal">
+                    <table width="100%" height="100%">
+                        <tr>
+                            <td align="center">
+                            <span class="text_box_help_modal">Guía de inicio</span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="item1_modal_help">
+                <div class="img_help_modal_2">
+                    <img src="../img/group-11.png" srcset="../img/group-11@2x.png 2x,../img/group-11@3x.png 3x">
+                </div>
+                <div class="box_help_modal">
+                    <table width="100%" height="100%">
+                        <tr>
+                            <td align="center">
+                            <span class="text_box_help_modal">Haz una pregunta</span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="item1_modal_help">
+                <div class="img_help_modal_3">
+                    <img src="../img/group-10.png" srcset="../img/group-10@2x.png 2x,../img/group-10@3x.png 3x">
+                </div>
+                <div class="box_help_modal">
+                    <table width="100%" height="100%">
+                        <tr>
+                            <td align="center">
+                            <span class="text_box_help_modal">Busque en nuestro centro de ayuda</span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
           </div>
         </div>
       </div>
-<!-- End Modal -->
+
 <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>';
-/*
-
-
-
-<div class="Rectangle-5">
-    <div class="Inicio">
-        
-    </div>
-    <div class="Group-9">
-        <img src="../img/group-9.png"
-            srcset="../img/group-9@2x.png 2x,
-                    ../img/group-9@3x.png 3x">    
-    </div>
-</div>
-
-
-*/
 
 dol_include_once('/onboading/core/modules/modOnboading.class.php');
 $tmpmodule = new modOnboading($db);

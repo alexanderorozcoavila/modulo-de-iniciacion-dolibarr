@@ -38,6 +38,8 @@ Github: http://github.com/jorgechavz
   border-radius: 3px;
   /*transition: all 0.5s ease;*/
 }
+
+
 .modal .modal-wrap.small{
   width: 30%;
 }
@@ -61,6 +63,50 @@ Github: http://github.com/jorgechavz
 .modal .modal-wrap.from-bottom {
   transform: translateY(100%);
 }
+
+
+
+
+
+/* Box */
+.modal .modal-wrap2{
+  background-color: #ffffff;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.24), 0 0 4px 0 rgba(0, 0, 0, 0.12);
+  padding: 40px 50px;
+  width: 704px;
+  height: 344px;
+  margin: 20px auto;
+  align-self: flex-start;
+  border-radius: 3px;
+  /*transition: all 0.5s ease;*/
+}
+
+
+.modal .modal-wrap2.small{
+  width: 30%;
+}
+.modal .modal-wrap2.full{
+  width: 100%;
+  height: 100%;
+}
+
+.modal .modal-wrap2.a-center {
+  align-self: center;
+}
+.modal .modal-wrap2.from-left {
+  transform: translateX(-100%);
+}
+.modal .modal-wrap2.from-right {
+  transform: translateX(100%);
+}
+.modal .modal-wrap2.from-top {
+  transform: translateY(-100%);
+}
+.modal .modal-wrap2.from-bottom {
+  transform: translateY(100%);
+}
+
+
 
 
 /* Close button */
@@ -122,6 +168,21 @@ Github: http://github.com/jorgechavz
 /* Phone size */
 @media (max-width: 500px){
   .modal .modal-wrap {
+    width: 90%;
+  }
+}
+
+
+@media (max-width: 800px){
+  .modal .modal-wrap2 {
+    width: 80%;
+    padding: 20px;
+  }
+}
+
+/* Phone size */
+@media (max-width: 500px){
+  .modal .modal-wrap2 {
     width: 90%;
   }
 }

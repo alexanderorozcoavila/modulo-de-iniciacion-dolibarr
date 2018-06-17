@@ -47,9 +47,9 @@ $langs->load("admin");
 $langs->load("onboading@onboading");
 
 // Access control
-if (! $user->admin) {
-	accessforbidden();
-}
+// if (! $user->admin) {
+// 	accessforbidden();
+// }
 
 // Parameters
 $action = GETPOST('action', 'alpha');
@@ -84,8 +84,9 @@ llxHeader('', $langs->trans($page_name));
 
 // About page goes here
 //echo $langs->trans("MyModuleAboutPage");
-
+//print $_SERVER["PHP_SELF"];
 //print_r($conf);
+
 
 // Show info setup company
 $correo_box = "div_line_modal_correo_active";
@@ -273,7 +274,7 @@ print ' <div class="modal">
                          class="ic_markunread">
                     </div>
                     <div class="div_text_modal_correo">
-                        <a class="modal_title_1" href="'.$modal_decode['init']['link-correo'].'">'.$modal_decode['init']['text1-correo'].'</a>
+                        <a class="modal_title_1" href="'.DOL_URL_ROOT.'/'.$modal_decode['init']['link-correo'].'">'.$modal_decode['init']['text1-correo'].'</a>
                         <br>
                         <span class="modal_title_2">'.$modal_decode['init']['text2-correo'].'</span>
                     </div>
@@ -298,7 +299,7 @@ print ' <div class="modal">
                             class="ic_markunread">
                     </div>
                     <div class="div_text_modal_correo">
-                        <a class="modal_title_1" href="'.$modal_decode['init']['link-empresa'].'">'.$modal_decode['init']['text1-empresa'].'</a>
+                        <a class="modal_title_1" href="'.DOL_URL_ROOT.'/'.$modal_decode['init']['link-empresa'].'">'.$modal_decode['init']['text1-empresa'].'</a>
                         <br>
                         <span class="modal_title_2">'.$modal_decode['init']['text2-empresa'].'</span>
                     </div>
@@ -326,7 +327,7 @@ print ' <div class="modal">
                         class="ic_markunread">
                     </div>
                     <div class="div_text_modal_correo">
-                        <a class="modal_title_1" href="'.$modal_decode['init']['link-equipo'].'">'.$modal_decode['init']['text1-equipo'].'</a>
+                        <a class="modal_title_1" href="'.DOL_URL_ROOT.'/'.$modal_decode['init']['link-equipo'].'">'.$modal_decode['init']['text1-equipo'].'</a>
                         <br>
                         <span class="modal_title_2">'.$modal_decode['init']['text2-equipo'].'</span>
                     </div>
@@ -357,46 +358,46 @@ print ' <div class="modal">
                 <table width="100%" height="100%">
                     <tr>
                         <td align="center">
-                            <span class="title_modal_help">¿Cómo te podemos ayudar?</span>
+                            <span class="title_modal_help">'.$modal_decode['help']['title'].'</span>
                         </td>
                     </tr>
                 </table>
             </div>
             <div class="item1_modal_help">
                 <div class="img_help_modal_1">
-                    <img src="../img/group-12.png" srcset="../img/group-12@2x.png 2x,../img/group-12@3x.png 3x">
+                    <img src="'.$modal_decode['help']['img_src_1'].'" srcset="'.$modal_decode['help']['img_srcset_1'].'">
                 </div>
                 <div class="box_help_modal">
                     <table width="100%" height="100%">
                         <tr>
                             <td align="center">
-                            <span class="text_box_help_modal">Guía de inicio</span></td>
+                            <a class="text_box_help_modal" href="'.$modal_decode['help']['link_1'].'">'.$modal_decode['help']['text_1'].'</a></td>
                         </tr>
                     </table>
                 </div>
             </div>
             <div class="item1_modal_help">
                 <div class="img_help_modal_2">
-                    <img src="../img/group-11.png" srcset="../img/group-11@2x.png 2x,../img/group-11@3x.png 3x">
+                    <img src="'.$modal_decode['help']['img_src_2'].'" srcset="'.$modal_decode['help']['img_srcset_2'].'">
                 </div>
                 <div class="box_help_modal">
                     <table width="100%" height="100%">
                         <tr>
                             <td align="center">
-                            <span class="text_box_help_modal">Haz una pregunta</span></td>
+                            <a class="text_box_help_modal" href="'.$modal_decode['help']['link_2'].'">'.$modal_decode['help']['text_2'].'</a></td>
                         </tr>
                     </table>
                 </div>
             </div>
             <div class="item1_modal_help">
                 <div class="img_help_modal_3">
-                    <img src="../img/group-10.png" srcset="../img/group-10@2x.png 2x,../img/group-10@3x.png 3x">
+                    <img src="'.$modal_decode['help']['img_src_3'].'" srcset="'.$modal_decode['help']['img_srcset_3'].'">
                 </div>
                 <div class="box_help_modal">
                     <table width="100%" height="100%">
                         <tr>
                             <td align="center">
-                            <span class="text_box_help_modal">Busque en nuestro centro de ayuda</span></td>
+                            <a class="text_box_help_modal" href="'.$modal_decode['help']['link_3'].'">'.$modal_decode['help']['text_3'].'</a></td>
                         </tr>
                     </table>
                 </div>

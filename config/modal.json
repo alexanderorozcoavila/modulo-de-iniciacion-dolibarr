@@ -4,12 +4,27 @@
         "subtitle":"Completá estos 3 simples pasos que realizamos para vos",
         "text1-correo":"Configurar el correo electrónico",
         "text2-correo":"Integre su dirección de correo electrónico para sus emails de salida",
-        "link-correo":"#",
+        "link-correo":"onboading/admin/mails.php",
         "text1-empresa":"Cargar datos de empresa",
         "text2-empresa":"Complete los datos de su empresa que luego verá en las facturas",
-        "link-empresa":"/dolibarr/htdocs/admin/company.php?mainmenu=home",
+        "link-empresa":"onboading/admin/company.php",
         "text1-equipo":"Invita a tu equipo",
         "text2-equipo":"Genere nuevos usuarios para empezar a trabajar",
-        "link-equipo":"#"
+        "link-equipo":"onboading/admin/card.php?leftmenu=users&action=create"
+    },
+    "help":{
+        "title":"¿Cómo te podemos ayudar?",
+        "img_src_1":"../img/group-12.png",
+        "img_srcset_1":"../img/group-12@2x.png 2x,../img/group-12@3x.png 3x",
+        "img_src_2":"../img/group-11.png",
+        "img_srcset_2":"../img/group-11@2x.png 2x,../img/group-11@3x.png 3x",
+        "img_src_3":"../img/group-10.png",
+        "img_srcset_3":"../img/group-10@2x.png 2x,../img/group-10@3x.png 3x",
+        "text_1":"Guía de inicio",
+        "text_2":"Haz una pregunta",
+        "text_3":"Busque en nuestro centro de ayuda",
+        "link_1":"1",
+        "link_2":"2",
+        "link_3":"3"
     }
 }

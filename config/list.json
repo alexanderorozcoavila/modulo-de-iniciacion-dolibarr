@@ -18,7 +18,7 @@
             "label":"Ayuda",
             "link":"",
             "css":"",
-            "icon-src":"../img/group-9.png",
+            "icon-src":"../img/group-9.svg",
             "icon-srcset":"../img/group-9@2x.png 2x,../img/group-9@3x.png 3x",
             "onclick":""
         }

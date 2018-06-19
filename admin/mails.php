@@ -49,6 +49,33 @@ $action=GETPOST('action','alpha');
 
 //if (! $user->admin) accessforbidden();
 
+
+require_once DOL_DOCUMENT_ROOT . '/user/class/usergroup.class.php';
+global $db;
+$usergroup = new UserGroup($db);
+
+$re_gruop = $usergroup->listGroupsForUser($user->id);
+
+$access_json = file_get_contents("../config/access.json");
+$access_json_decode = json_decode($access_json, true);
+
+$acceso_user = false;
+$grupo_onboading = $access_json_decode['group']['1'];
+
+foreach($re_gruop as $key=>$val) {
+	if($val->nom == $grupo_onboading){
+		$acceso_user = true;
+	}
+}
+
+if($user->admin){
+
+}else{
+	if (! $acceso_user) accessforbidden();
+}
+
+
+
 $usersignature=$user->signature;
 // For action = test or send, we ensure that content is not html, even for signature, because this we want a test with NO html.
 if ($action == 'test' || $action == 'send')

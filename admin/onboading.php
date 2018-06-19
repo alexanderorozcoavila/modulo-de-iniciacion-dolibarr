@@ -94,12 +94,14 @@ $correo_line = "Line3_active";
 $correo_text = "text_status_modal_active";
 $correo_text_text = '<img src="../img/path-2.png" srcset="../img/path-2@2x.png 2x,../img/path-2@3x.png 3x"> TERMINADO';
 $c = 30;
+$c1 =0;
 
 $empresa_box = "div_line_modal_empresa_active";
 $empresa_line = "Line3_active";
 $empresa_text = "text_status_modal_active";
 $empresa_text_text = '<img src="../img/path-2.png" srcset="../img/path-2@2x.png 2x,../img/path-2@3x.png 3x"> TERMINADO';
 $e = 40;
+$c1 = 0;
 
 
 $equipo_box = "div_line_modal_equipo_active";
@@ -107,6 +109,7 @@ $equipo_line = "Line3_active";
 $equipo_text = "text_status_modal_active";
 $equipo_text_text = '<img src="../img/path-2.png" srcset="../img/path-2@2x.png 2x,../img/path-2@3x.png 3x"> TERMINADO';
 $q = 30;
+$q1 = 0;
 
 
 
@@ -119,6 +122,8 @@ if (! empty($setupcompanynotcomplete))
     $empresa_text = "text_status_modal";
     $empresa_text_text = "X SIN COMPLETAR";
     $e = 0;
+    $e1 = 1;
+
 }
 
 
@@ -131,6 +136,7 @@ if (! empty($setupmailnotcomplete))
     $correo_text = "text_status_modal";
     $correo_text_text = "X SIN COMPLETAR";
     $c = 0;
+    $c1 = 1;
 }
 
 $sql = "SELECT u.rowid, u.lastname, u.firstname, u.admin, u.login, u.fk_soc, u.datec, u.statut";
@@ -169,9 +175,13 @@ if($num==1){
     $equipo_text = "text_status_modal";
     $equipo_text_text = 'X SIN COMPLETAR';
     $q = 0;
+    $q1 = 1;
 }
 
 $c_progress = $c + $e + $q;
+$c_circle =  $c1 + $e1 + $q1;
+
+
 
 $data = file_get_contents("../config/list.json");
 $data_decode = json_decode($data, true);
@@ -189,11 +199,35 @@ print ' <div class="Rectangle-5">
             </div>
             <div class="Rectangle-11">
                 <div class="Comenzar">
-                    <label for="modal-trigger-center" class="open-modal">
-                        '.$data_decode['header']['init']['label'].'
-                    </label>
+                    <table  cellspacing="0" cellpadding="0" style="width: 128px;
+                    height: 32px;">
+                        <tr>
+                            <td style="vertical-align: middle;text-align: right;cursor:pointer;" width="88px">
+                                <label for="modal-trigger-center" class="open-modal" style="cursor:pointer;">
+                                    '.$data_decode['header']['init']['label'].'
+                                </label>
+                            </td>
+                            <td style="vertical-align: middle;text-align: center;">
+                            <span for="modal-trigger-center" class="open-modal" style="    background: #bf073a;
+                            border-radius: 0.8em;
+                            height: 16px;
+                            -moz-border-radius: 0.8em;
+                            -webkit-border-radius: 0.8em;
+                            color: #ffffff;
+                            display: inline-block;
+                            font-size: 12px;
+                            text-align: center;
+                            width: 16px;
+                            cursor:pointer;">
+                            <label for="modal-trigger-center" class="open-modal" style="cursor:pointer;">
+                            '.$c_circle.'
+                            </label>
+                            </span>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
-                <div class="layer">9</div>
+                
             </div>
             <div class="div_line">
                 <hr class="Line">

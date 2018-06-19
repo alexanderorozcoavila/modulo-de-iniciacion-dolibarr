@@ -54,7 +54,31 @@ $action=GETPOST('action','aZ09');
 $langs->load("admin");
 $langs->load("companies");
 
-//if (! $user->admin) accessforbidden();
+//print var_dump($group);
+
+
+require_once DOL_DOCUMENT_ROOT . '/user/class/usergroup.class.php';
+global $db;
+$usergroup = new UserGroup($db);
+$re_gruop = $usergroup->listGroupsForUser($user->id);
+
+$access_json = file_get_contents("../config/access.json");
+$access_json_decode = json_decode($access_json, true);
+
+$acceso_user = false;
+$grupo_onboading = $access_json_decode['group']['1'];
+
+foreach($re_gruop as $key=>$val) {
+	if($val->nom == $grupo_onboading){
+		$acceso_user = true;
+	}
+}
+if($user->admin){
+
+}else{
+	if (! $acceso_user) accessforbidden();
+}
+
 
 $error=0;
 

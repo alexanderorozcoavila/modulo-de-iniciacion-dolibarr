@@ -60,6 +60,8 @@ if (! empty($conf->multicompany->enabled)) dol_include_once('/multicompany/class
 if (! empty($conf->categorie->enabled)) require_once DOL_DOCUMENT_ROOT.'/categories/class/categorie.class.php';
 
 
+
+
 $id			= GETPOST('id','int');
 $action		= GETPOST('action','alpha');
 $mode		= GETPOST('mode','alpha');
@@ -72,6 +74,28 @@ $cancel     = GETPOST('cancel');
 if (($action == 'create' || $action == 'adduserldap') && ! empty($conf->multicompany->enabled) && $conf->entity > 1 && $conf->global->MULTICOMPANY_TRANSVERSE_MODE)
 {
 	//accessforbidden();
+}
+
+require_once DOL_DOCUMENT_ROOT . '/user/class/usergroup.class.php';
+global $db;
+$usergroup = new UserGroup($db);
+$re_gruop = $usergroup->listGroupsForUser($user->id);
+
+$access_json = file_get_contents("../config/access.json");
+$access_json_decode = json_decode($access_json, true);
+
+$acceso_user = false;
+$grupo_onboading = $access_json_decode['group']['1'];
+
+foreach($re_gruop as $key=>$val) {
+	if($val->nom == $grupo_onboading){
+		$acceso_user = true;
+	}
+}
+if($user->admin){
+
+}else{
+	if (! $acceso_user) accessforbidden();
 }
 
 print '<div class="Rectangle-5">';

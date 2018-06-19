@@ -255,10 +255,10 @@
   z-index: 1;
   left: 0;
   top: 0;
-  width: 5em;
-  line-height: 5em;
-  font-size: 0.2em;
-  color: #cccccc;
+  width: 3.33em;
+  line-height: 3.33em;
+  font-size: 0.3em;
+  color: #4db53c;
   display: block;
   text-align: center;
   white-space: nowrap;
@@ -1007,17 +1007,18 @@
 .c100:hover {
   cursor: default;
 }
+/*letra*/
 .c100:hover > span {
-  width: 3.33em;
+  /* width: 3.33em;
   line-height: 3.33em;
   font-size: 0.3em;
-  color: #307bbb;
+  color: #307bbb; */
 }
 .c100:hover:after {
-  top: 0.04em;
+  /* top: 0.04em;
   left: 0.04em;
   width: 0.92em;
-  height: 0.92em;
+  height: 0.92em; */
 }
 .c100.dark {
   background-color: #777777;

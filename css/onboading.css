@@ -48,8 +48,8 @@ background-color: #f9f9f9;
 .Comenzar {
   width: 72px;
   height: 16px;
-  margin-left:16px;
-  margin-top:5px;
+  /*margin-left:16px;
+  margin-top:5px;*/
   font-family: Roboto;
   font-size: 14px;
   font-weight: normal;
@@ -77,14 +77,16 @@ background-color: #f9f9f9;
 .Group-9 {
   
   height: 32px;
+  width: 32px;
   object-fit: contain;
   float:right;
   margin-top:48px;
   margin-right:16px;
 }
 .Group-9 img {
-  width: 32px;
-  height: 32px;
+    width: 24px;
+    height: 24px;
+    margin-top: 4px;
 }
 
 .Line {
@@ -96,14 +98,14 @@ background-color: #f9f9f9;
 .div_line{
   float:left;
   width: 98%;
-  margin-top:15px;
+  margin-top:0px;
   margin-left:8px;
 }
 
 .div_line_list{
   float:left;
   width: 98%;
-  margin-top:0px;
+  margin-top:-10px;
   margin-left:8px;
 }
 
@@ -488,4 +490,10 @@ background-color: #f9f9f9;
     letter-spacing: normal;
     text-align: center;
     color: #4a4a4a;
+}
+
+.blue_circle{
+-webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);
 }

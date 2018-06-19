@@ -203,8 +203,8 @@ print ' <div class="Rectangle-5">
                     <table  cellspacing="0" cellpadding="0" style="width: 128px;
                     height: 32px;">
                         <tr>
-                            <td style="vertical-align: middle;text-align: right;cursor:pointer;" width="88px">
-                                <label for="modal-trigger-center" class="open-modal" style="cursor:pointer;">
+                            <td style="vertical-align: middle;text-align: right;cursor:pointer;color:#b10053;" width="88px">
+                                <label for="modal-trigger-center" class="open-modal" style="cursor:pointer;color:#b10053;">
                                     '.$data_decode['header']['init']['label'].'
                                 </label>
                             </td>

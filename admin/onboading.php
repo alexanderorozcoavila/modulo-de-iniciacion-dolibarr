@@ -54,7 +54,8 @@ $langs->load("onboading@onboading");
 // Parameters
 $action = GETPOST('action', 'alpha');
 
-
+print "<link href='http://fonts.googleapis.com/css?family=Exo' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Joti+One' rel='stylesheet' type='text/css'>";
 /*
  * Actions
  */

@@ -11,7 +11,7 @@ margin-top: -16px !important;
 }
 
 .Inicio {
-font-family: roboto,arial,tahoma,verdana,helvetica !important;
+font-family: Roboto !important;
 font-size: 22px;
 font-weight: 300;
 font-style: normal;
@@ -41,7 +41,7 @@ background-color: #f9f9f9;
   float:right;
   border: solid 1px #b10053;
   margin-top:48px;
-  margin-right:16px;
+  margin-right:24px;
   background-color: #ffffff;
 }
 
@@ -50,7 +50,7 @@ background-color: #f9f9f9;
   height: 16px;
   /*margin-left:16px;
   margin-top:5px;*/
-  font-family: roboto,arial,tahoma,verdana,helvetica !important;
+  font-family: Roboto !important;
   font-size: 14px;
   font-weight: normal;
   font-style: normal;
@@ -63,7 +63,7 @@ background-color: #f9f9f9;
 .layer {
   width: 16px;
   height: 16px;
-  font-family: roboto,arial,tahoma,verdana,helvetica !important;
+  font-family: Roboto !important;
   font-size: 14px;
   font-weight: normal;
   font-style: normal;
@@ -87,6 +87,7 @@ background-color: #f9f9f9;
     width: 24px;
     height: 24px;
     margin-top: 4px;
+    margin-left: 4px;
 }
 
 .Line {
@@ -143,7 +144,7 @@ background-color: #f9f9f9;
 .title_list{
   width: 208px;
   height: 16px;
-  font-family: roboto,arial,tahoma,verdana,helvetica !important;
+  font-family: Roboto !important;
   font-size: 14px;
   font-weight: normal;
   font-style: normal;
@@ -156,7 +157,7 @@ background-color: #f9f9f9;
 .description_list {
   width: 384px;
   height: 16px;
-  font-family: roboto,arial,tahoma,verdana,helvetica !important;
+  font-family: Roboto !important;
   font-size: 12px;
   font-weight: normal;
   font-style: normal;
@@ -184,7 +185,7 @@ background-color: #f9f9f9;
 
 .div_list_link_item a{
   height: 32px;
-  font-family: roboto,arial,tahoma,verdana,helvetica !important;
+  font-family: Roboto !important;
   font-size: 12px;
   font-weight: normal;
   font-style: normal;
@@ -282,7 +283,7 @@ background-color: #f9f9f9;
 }
 
 .text_status_modal_inactive{
-  font-family: roboto,arial,tahoma,verdana,helvetica !important;
+  font-family: Roboto !important;
   font-size: 14px;
   font-weight: normal;
   font-style: normal;
@@ -293,7 +294,7 @@ background-color: #f9f9f9;
 }
 
 .text_status_modal_active{
-  font-family: roboto,arial,tahoma,verdana,helvetica !important;
+  font-family: Roboto !important;
   font-size: 14px;
   font-weight: normal;
   font-style: normal;
@@ -304,7 +305,7 @@ background-color: #f9f9f9;
 }
 
 .modal_title_1{
-  font-family: roboto,arial,tahoma,verdana,helvetica !important;
+  font-family: Roboto !important;
   font-size: 14px;
   font-weight: normal;
   font-style: normal;
@@ -320,7 +321,7 @@ background-color: #f9f9f9;
 
 
 .modal_title_2{
-  font-family: roboto,arial,tahoma,verdana,helvetica !important;
+  font-family: Roboto !important;
   font-size: 12px;
   font-weight: normal;
   font-style: normal;
@@ -384,7 +385,7 @@ background-color: #f9f9f9;
 }
 
 .text_modal_init_title{
-  font-family: roboto,arial,tahoma,verdana,helvetica!important;
+  font-family: Roboto!important;
   font-size: 18px;
   font-weight: 300;
   font-style: normal;
@@ -395,7 +396,7 @@ background-color: #f9f9f9;
 }
 
 .text_modal_init_subtitle{
-  font-family: roboto,arial,tahoma,verdana,helvetica !important;
+  font-family: Roboto !important;
   font-size: 14px;
   font-weight: normal;
   font-style: normal;
@@ -416,7 +417,7 @@ background-color: #f9f9f9;
 }
 
 .title_modal_help{
-    font-family: roboto,arial,tahoma,verdana,helvetica !important;
+    font-family: Roboto !important;
     font-size: 18px;
     font-weight: 300;
     font-style: normal;
@@ -481,7 +482,7 @@ background-color: #f9f9f9;
   height: 48px;
 }
 .text_box_help_modal{
-    font-family: roboto,arial,tahoma,verdana,helvetica !important;
+    font-family: Roboto !important;
     font-size: 14px;
     font-weight: normal;
     font-style: normal;

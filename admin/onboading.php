@@ -54,8 +54,7 @@ $langs->load("onboading@onboading");
 // Parameters
 $action = GETPOST('action', 'alpha');
 
-print "<link href='http://fonts.googleapis.com/css?family=Exo' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Joti+One' rel='stylesheet' type='text/css'>";
+print "<link href='https://fonts.google.com/specimen/Roboto?selection.family=Roboto' rel='stylesheet' type='text/css'>";
 /*
  * Actions
  */
@@ -244,7 +243,7 @@ print '     <div class="div_list_img">
                             <span class="title_list">'.$d['title'].'</span>
                         </td>
                     </tr>
-                    <tr>
+                    <tr height="45px">
                         <td style="vertical-align: baseline;">
                             <span class="description_list">'.$d['description'].'</span>
                         </td>

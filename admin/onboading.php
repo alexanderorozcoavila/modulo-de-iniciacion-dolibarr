@@ -54,7 +54,6 @@ $langs->load("onboading@onboading");
 // Parameters
 $action = GETPOST('action', 'alpha');
 
-print "<link href='https://fonts.google.com/specimen/Roboto?selection.family=Roboto' rel='stylesheet' type='text/css'>";
 /*
  * Actions
  */
@@ -70,7 +69,9 @@ $form = new Form($db);
 
 $page_name = "Onboading";
 llxHeader('', $langs->trans($page_name));
-
+print "<style>
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+</style>";
 
 // Configuration header
 //$head = onboadingAdminPrepareHead();

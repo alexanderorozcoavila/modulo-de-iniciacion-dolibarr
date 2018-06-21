@@ -5,7 +5,9 @@
             "link":"#",
             "css":"Inicio",
             "icon":"",
-            "onclick":""
+            "onclick":"",
+            "alert":"Quedan 10 días de prueba",
+            "text_btn_alert":"Comprar"
         },
         "init":{
             "label":"Comenzar",
@@ -19,15 +21,15 @@
             "link":"",
             "css":"",
             "icon-src":"../img/group-9.svg",
-            "icon-srcset":"../img/group-9@2x.png 2x,../img/group-9@3x.png 3x",
+            "icon-srcset":"../img/group-9@2x.svg 2x,../img/group-9@3x.svg 3x",
             "onclick":""
         }
     },
     "body-list":{
         "0":{
             "title":"Clientes y Proveedores",
-            "icon-src":"../img/group-2.png",
-            "icon-srcset":"../img/group-2@2x.png 2x,../img/group-2@3x.png 3x",
+            "icon-src":"../img/group-2.svg",
+            "icon-srcset":"../img/group-2@2x.svg 2x,../img/group-2@3x.svg 3x",
             "description":"Registre todas las personas que interactúan con su empresa",
             "list-links":{
                 "0":{
@@ -49,8 +51,8 @@
         },
         "1":{
             "title":"Productos y Servicios",
-            "icon-src":"../img/group-3.png",
-            "icon-srcset":"../img/group-3@2x.png 2x,../img/group-3@3x.png 3x",
+            "icon-src":"../img/group-3.svg",
+            "icon-srcset":"../img/group-3@2x.svg 2x,../img/group-3@3x.svg 3x",
             "description":"Cargue su catálogo de productos o servicios",
             "list-links":{
                 "0":{
@@ -77,8 +79,8 @@
         },
         "2":{
             "title":"Comercial",
-            "icon-src":"../img/group-4.png",
-            "icon-srcset":"../img/group-4@2x.png 2x,../img/group-4@3x.png 3x",
+            "icon-src":"../img/group-4.svg",
+            "icon-srcset":"../img/group-4@2x.svg 2x,../img/group-4@3x.svg 3x",
             "description":"Gestione los pedidos y presupuestos que crea para clientes o proveedores",
             "list-links":{
                 "0":{
@@ -95,8 +97,8 @@
         },
         "3":{
             "title":"Financiera",
-            "icon-src":"../img/group-5.png",
-            "icon-srcset":"../img/group-5@2x.png 2x,../img/group-5@3x.png 3x",
+            "icon-src":"../img/group-5.svg",
+            "icon-srcset":"../img/group-5@2x.svg 2x,../img/group-5@3x.svg 3x",
             "description":"Genere facturas para sus pedidos realizados. Registre los pagos para cada factura.",
             "list-links":{
                 "0":{
@@ -123,8 +125,8 @@
         },
         "4":{
             "title":"Cuentas",
-            "icon-src":"../img/group-7.png",
-            "icon-srcset":"../img/group-7@2x.png 2x,../img/group-7@3x.png 3x",
+            "icon-src":"../img/group-7.svg",
+            "icon-srcset":"../img/group-7@2x.svg 2x,../img/group-7@3x.svg 3x",
             "description":"Cree sus cuentas y registre todas las transacciones que pasen por su empresa.",
             "list-links":{
                 "0":{
@@ -138,24 +140,24 @@
                     "css":""
                 }
             }
-        }
-    },
-    "5":{
-        "title":"Recursos Humanos",
-        "icon-src":"../img/group-6.png",
-        "icon-srcset":"../img/group-6@2x.png 2x,../img/group-6@3x.png 3x",
-        "description":"Tenga registro de las vacaciones o gastos de los empleados.",
-        "list-links":{
-            "0":{
-                "title":"Crear cuentas",
-                "link":"",
-                "css":""
-            },
-            "2":{
-                "title":"Ver libro",
-                "link":"",
-                "css":""
+        },
+        "5":{
+            "title":"Recursos Humanos",
+            "icon-src":"../img/group-6.svg",
+            "icon-srcset":"../img/group-6@2x.svg 2x,../img/group-6@3x.svg 3x",
+            "description":"Tenga registro de las vacaciones o gastos de los empleados.",
+            "list-links":{
+                "0":{
+                    "title":"Crear cuentas",
+                    "link":"",
+                    "css":""
+                },
+                "2":{
+                    "title":"Ver libro",
+                    "link":"",
+                    "css":""
+                }
             }
         }
-    }
+    } 
 }

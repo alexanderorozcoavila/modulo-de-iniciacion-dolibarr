@@ -69,7 +69,9 @@ $form = new Form($db);
 
 $page_name = "Onboading";
 llxHeader('', $langs->trans($page_name));
-//print "<style>@import url('https://fonts.googleapis.com/css?family=Roboto');</style>";
+print "<style>
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+</style>";
 
 // Configuration header
 //$head = onboadingAdminPrepareHead();
@@ -185,37 +187,89 @@ $c_circle =  $c1 + $e1 + $q1;
 $data = file_get_contents("../config/list.json");
 $data_decode = json_decode($data, true);
 
-?>
-
-<div class="Rectangle-5">
-    <div id="margenes" style="margin-left:8px;margin-right:7px;">
-        <div id="header" style="height: 63px;border-bottom: solid 1px #eaeaea;margin-left:0px;margin-right:0px;">
-            0
-        </div>
-        <div id="header" style="height: 97px;border-bottom: solid 1px #eaeaea;margin-left:0px;margin-right:0px;">
-            0
-        </div>
-        <div id="header" style="height: 95px;border-bottom: solid 1px #eaeaea;margin-left:0px;margin-right:0px;">
-            0
-        </div>
-        <div id="header" style="height: 95px;border-bottom: solid 1px #eaeaea;margin-left:0px;margin-right:0px;">
-            0
-        </div>
-        <div id="header" style="height: 95px;border-bottom: solid 1px #eaeaea;margin-left:0px;margin-right:0px;">
-            0
-        </div>
-        <div id="header" style="height: 95px;border-bottom: solid 1px #eaeaea;margin-left:0px;margin-right:0px;">
-            0
-        </div>
-    </div>
-</div>
 
 
 
 
 
 
-<?php
+
+print ' <div class="Rectangle-5">
+            <div class="Inicio">
+                <label>'.$data_decode['header']['home']['label'].'</label>
+            </div>
+            <div class="Group-9">
+                <label for="modal-trigger-center2" class="open-modal">
+                    <img src="'.$data_decode['header']['help']['icon-src'].'" 
+                    srcset="'.$data_decode['header']['help']['icon-srcset'].'">
+                </label>    
+            </div>
+            <div class="Rectangle-11">
+                <div class="Comenzar">
+                    <table  cellspacing="0" cellpadding="0" style="width: 128px;
+                    height: 32px;">
+                        <tr>
+                            <td style="vertical-align: middle;text-align: right;cursor:pointer;color:#b10053;" width="88px">
+                                <label for="modal-trigger-center" class="open-modal" style="cursor:pointer;color:#b10053;">
+                                    '.$data_decode['header']['init']['label'].'
+                                </label>
+                            </td>
+                            <td style="vertical-align: middle;text-align: center;">
+                            <span for="modal-trigger-center" class="open-modal" style="    background: #bf073a;
+                            border-radius: 0.8em;
+                            height: 16px;
+                            -moz-border-radius: 0.8em;
+                            -webkit-border-radius: 0.8em;
+                            color: #ffffff;
+                            display: inline-block;
+                            font-size: 12px;
+                            text-align: center;
+                            width: 16px;
+                            cursor:pointer;">
+                            <label for="modal-trigger-center" class="open-modal" style="cursor:pointer;">
+                            '.$c_circle.'
+                            </label>
+                            </span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+            </div>
+            <div class="div_line">
+                <hr class="Line">
+            </div>';
+foreach ($data_decode['body-list'] as $d) {
+print '     <div class="div_list_img">
+                <img src="'.$d['icon-src'].'" class="img_list_center"/>
+            </div>
+            <div class="div_list_text">
+                <table height="90px" cellspacing="0" cellpadding="0">
+                    <tr height="45px">
+                        <td style="vertical-align:bottom;">
+                            <span class="title_list">'.$d['title'].'</span>
+                        </td>
+                    </tr>
+                    <tr height="45px">
+                        <td style="vertical-align: baseline;">
+                            <span class="description_list">'.$d['description'].'</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="div_list_link">';
+foreach ($d['list-links'] as $a) {
+print '     <div class="div_list_link_item">
+                <a href="'.$a['link'].'">'.$a['title'].'</a>
+            </div>';
+}
+print ' </div>
+        <div class="div_line_list">
+            <hr class="Line">
+        </div>';
+}
+print ' </div>';
+
 //inicio de modal
 $modal = file_get_contents("../config/modal.json");
 $modal_decode = json_decode($modal, true);
@@ -391,7 +445,9 @@ print ' <div class="modal">
             </div>
           </div>
         </div>
-      </div>';
+      </div>
+
+<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>';
 
 dol_include_once('/onboading/core/modules/modOnboading.class.php');
 $tmpmodule = new modOnboading($db);

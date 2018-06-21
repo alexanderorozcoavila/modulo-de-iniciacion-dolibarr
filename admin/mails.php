@@ -274,7 +274,7 @@ if ($action == 'edit')
 	print '<div class="Inicio" style="width: 400px">
 	<label>Configuracion de Correo Saliente</label>
 	</div>';
-	print '<div style="margin-left:16px;>"';
+	print '<div style="margin-left:16px;">';
 	print '<form method="post" action="'.$_SERVER["PHP_SELF"].'">';
 	print '<input type="hidden" name="token" value="'.$_SESSION['newtoken'].'">';
 	print '<input type="hidden" name="action" value="update">';

@@ -206,7 +206,7 @@ $data_decode = json_decode($data, true);
                     Inicio
             </div>
             <div class="Group-9">
-                <label for="modal-trigger-center2" class="open-modal">
+                <label for="modal-trigger-center2" class="open-modal" style="cursor:pointer;">
                     <img src="<?php echo $data_decode['header']['help']['icon-src'];?>" 
                     srcset="<?php echo $data_decode['header']['help']['icon-srcset'];?>">
                 </label>    

@@ -690,7 +690,7 @@ if ($action == 'create' || $action == 'adduserldap')
 <label>Nuevo Usuario</label>
 </div>';
 
-print '<div style="margin-left:16px;>"';
+print '<div style="margin-left:16px;">';
 
     if (! empty($conf->ldap->enabled) && (isset($conf->global->LDAP_SYNCHRO_ACTIVE) && $conf->global->LDAP_SYNCHRO_ACTIVE == 'ldap2dolibarr'))
     {

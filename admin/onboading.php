@@ -89,6 +89,7 @@ print "<style>@import url('https://fonts.googleapis.com/css?family='Roboto', san
 
 // Show info setup company
 $correo_box = "div_line_modal_correo_active";
+$correo_box_bg = 'style="margin-top: -3px;border-radius: 3px;background-color: rgba(84, 152, 5, 0.1);"';
 $correo_line = "Line3_active";
 $correo_text = "text_status_modal_active";
 $correo_text_text = '<img src="../img/path-2.png" srcset="../img/path-2@2x.png 2x,../img/path-2@3x.png 3x"> TERMINADO';
@@ -96,6 +97,7 @@ $c = 30;
 $c1 =0;
 
 $empresa_box = "div_line_modal_empresa_active";
+$empresa_box_bg = 'style="margin-top: -3px;border-radius: 3px;background-color: rgba(84, 152, 5, 0.1);"';
 $empresa_line = "Line3_active";
 $empresa_text = "text_status_modal_active";
 $empresa_text_text = '<img src="../img/path-2.png" srcset="../img/path-2@2x.png 2x,../img/path-2@3x.png 3x"> TERMINADO';
@@ -104,6 +106,7 @@ $c1 = 0;
 
 
 $equipo_box = "div_line_modal_equipo_active";
+$equipo_box_bg = 'style="margin-top: -3px;border-radius: 3px;background-color: rgba(84, 152, 5, 0.1);"';
 $equipo_line = "Line3_active";
 $equipo_text = "text_status_modal_active";
 $equipo_text_text = '<img src="../img/path-2.png" srcset="../img/path-2@2x.png 2x,../img/path-2@3x.png 3x"> TERMINADO';
@@ -116,9 +119,10 @@ if (empty($conf->global->MAIN_INFO_SOCIETE_NOM) || empty($conf->global->MAIN_INF
 //print img_picto('','puce').' '.$langs->trans("SetupDescription3", DOL_URL_ROOT.'/admin/company.php?mainmenu=home'.(empty($setupcompanynotcomplete)?'':'&action=edit'), $langs->transnoentities("Setup"), $langs->transnoentities("MenuCompanySetup"));
 if (! empty($setupcompanynotcomplete))
 {
-	$empresa_box = "div_line_modal_empresa";
+    $empresa_box = "div_line_modal_empresa";
+    $empresa_box_bg = "";
     $empresa_line = "Line3";
-    $empresa_text = "text_status_modal";
+    $empresa_text = "text_status_modal_inactive";
     $empresa_text_text = "X SIN COMPLETAR";
     $e = 0;
     $e1 = 1;
@@ -130,9 +134,10 @@ if (empty($conf->global->MAIN_MAIL_SMTP_SERVER) || empty($conf->global->MAIN_MAI
 //print img_picto('','puce').' '.$langs->trans("SetupDescription3", DOL_URL_ROOT.'/admin/company.php?mainmenu=home'.(empty($setupcompanynotcomplete)?'':'&action=edit'), $langs->transnoentities("Setup"), $langs->transnoentities("MenuCompanySetup"));
 if (! empty($setupmailnotcomplete))
 {
-	$correo_box = "div_line_modal_correo";
+    $correo_box = "div_line_modal_correo";
+    $correo_box_bg = "";
     $correo_line = "Line3";
-    $correo_text = "text_status_modal";
+    $correo_text = "text_status_modal_inactive";
     $correo_text_text = "X SIN COMPLETAR";
     $c = 0;
     $c1 = 1;
@@ -170,8 +175,9 @@ if ($resql)
 
 if($num==1){
     $equipo_box = "div_line_modal_equipo";
+    $equipo_box_bg = "";
     $equipo_line = "Line3";
-    $equipo_text = "text_status_modal";
+    $equipo_text = "text_status_modal_inactive";
     $equipo_text_text = 'X SIN COMPLETAR';
     $q = 0;
     $q1 = 1;
@@ -305,7 +311,7 @@ print ' <div class="modal">
             <div class="modal-overlay">
                 <label for="modal-trigger-center" class="o-close"></label>
             <div class="modal-wrap a-center">
-                <label for="modal-trigger-center" class="close">x</label>
+                <label for="modal-trigger-center" class="close" >X</label>
                 <div class="cabecera_modal_init">
                     <table height="40px" cellspacing="0" cellpadding="0">
                         <tr height="24px">
@@ -333,83 +339,89 @@ print ' <div class="modal">
                     <hr class="Line">
                 </div>
 
-                <div class="'.$correo_box.'">
-                    <div class="div_icon_modal_correo">
-                        <img src="../img/ic-markunread.png"
-                         srcset="../img/ic-markunread@2x.png 2x,
-                                 ../img/ic-markunread@3x.png 3x"
-                         class="ic_markunread">
-                    </div>
-                    <div class="div_text_modal_correo">
-                        <a class="modal_title_1" href="'.DOL_URL_ROOT.'/'.$modal_decode['init']['link-correo'].'">'.$modal_decode['init']['text1-correo'].'</a>
-                        <br>
-                        <span class="modal_title_2">'.$modal_decode['init']['text2-correo'].'</span>
-                    </div>
-                    <div class="div_divider_modal_correo">
-                        <hr class="'.$correo_line.'">
-                    </div>
-                    <div class="div_status_modal_correo">
-                        <table width="100%" height="100%">
-                            <tr>
-                                <td align="center">
-                                <span class="'.$correo_text.'">'.$correo_text_text.'</span></td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="'.$empresa_box.'">
-                    <div class="div_icon_modal_correo">
-                    <img src="../img/ic-markunread.png"
+                <a class="modal_title_1" href="'.DOL_URL_ROOT.'/'.$modal_decode['init']['link-correo'].'">
+                    <div class="'.$correo_box.'">
+                        <div class="div_icon_modal_correo">
+                            <img src="../img/ic-markunread.png"
                             srcset="../img/ic-markunread@2x.png 2x,
                                     ../img/ic-markunread@3x.png 3x"
                             class="ic_markunread">
+                        </div>
+                        <div class="div_text_modal_correo">
+                            '.$modal_decode['init']['text1-correo'].'
+                            <br>
+                            <span class="modal_title_2">'.$modal_decode['init']['text2-correo'].'</span>
+                        </div>
+                        <div class="div_divider_modal_correo">
+                            <hr class="'.$correo_line.'">
+                        </div>
+                        <div class="div_status_modal_correo">
+                            <table width="226px" height="37px" '.$correo_box_bg.'>
+                                <tr>
+                                    <td align="center">
+                                    <span class="'.$correo_text.'">'.$correo_text_text.'</span></td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
-                    <div class="div_text_modal_correo">
-                        <a class="modal_title_1" href="'.DOL_URL_ROOT.'/'.$modal_decode['init']['link-empresa'].'">'.$modal_decode['init']['text1-empresa'].'</a>
-                        <br>
-                        <span class="modal_title_2">'.$modal_decode['init']['text2-empresa'].'</span>
-                    </div>
-                    <div class="div_divider_modal_correo">
-                        <hr class="'.$empresa_line.'">
-                    </div>
-                    <div class="div_status_modal_correo">
-                        <table width="100%" height="100%">
-                            <tr>
-                                <td align="center">
-                                    <span class="'.$empresa_text.'">
-                                        '.$empresa_text_text.' 
-                                     </span>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
+                </a>
 
-                <div class="'.$equipo_box.'">
-                    <div class="div_icon_modal_correo">
+                <a class="modal_title_1" href="'.DOL_URL_ROOT.'/'.$modal_decode['init']['link-empresa'].'">
+                    <div class="'.$empresa_box.'">
+                        <div class="div_icon_modal_correo">
                         <img src="../img/ic-markunread.png"
-                        srcset="../img/ic-markunread@2x.png 2x,
-                                ../img/ic-markunread@3x.png 3x"
-                        class="ic_markunread">
+                                srcset="../img/ic-markunread@2x.png 2x,
+                                        ../img/ic-markunread@3x.png 3x"
+                                class="ic_markunread">
+                        </div>
+                        <div class="div_text_modal_correo">
+                            '.$modal_decode['init']['text1-empresa'].'
+                            <br>
+                            <span class="modal_title_2">'.$modal_decode['init']['text2-empresa'].'</span>
+                        </div>
+                        <div class="div_divider_modal_correo">
+                            <hr class="'.$empresa_line.'">
+                        </div>
+                        <div class="div_status_modal_correo">
+                            <table width="226px" height="37px" '.$empresa_box_bg.'>
+                                <tr>
+                                    <td align="center">
+                                        <span class="'.$empresa_text.'">
+                                            '.$empresa_text_text.' 
+                                        </span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
-                    <div class="div_text_modal_correo">
-                        <a class="modal_title_1" href="'.DOL_URL_ROOT.'/'.$modal_decode['init']['link-equipo'].'">'.$modal_decode['init']['text1-equipo'].'</a>
-                        <br>
-                        <span class="modal_title_2">'.$modal_decode['init']['text2-equipo'].'</span>
+                </a>
+
+                <a class="modal_title_1" href="'.DOL_URL_ROOT.'/'.$modal_decode['init']['link-equipo'].'">
+                    <div class="'.$equipo_box.'">
+                        <div class="div_icon_modal_correo">
+                            <img src="../img/ic-markunread.png"
+                            srcset="../img/ic-markunread@2x.png 2x,
+                                    ../img/ic-markunread@3x.png 3x"
+                            class="ic_markunread">
+                        </div>
+                        <div class="div_text_modal_correo">
+                            '.$modal_decode['init']['text1-equipo'].'
+                            <br>
+                            <span class="modal_title_2">'.$modal_decode['init']['text2-equipo'].'</span>
+                        </div>
+                        <div class="div_divider_modal_correo">
+                            <hr class="'.$equipo_line.'">
+                        </div>
+                        <div class="div_status_modal_correo">
+                            <table width="226px" height="37px" '.$equipo_box_bg.'>
+                                <tr>
+                                    <td align="center">
+                                    <span class="'.$equipo_text.'">'.$equipo_text_text.'</span></td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
-                    <div class="div_divider_modal_correo">
-                        <hr class="'.$equipo_line.'">
-                    </div>
-                    <div class="div_status_modal_correo">
-                        <table width="100%" height="100%">
-                            <tr>
-                                <td align="center">
-                                <span class="'.$equipo_text.'">'.$equipo_text_text.'</span></td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>    
+                </a>    
             </div>
         </div>
     </div>
@@ -430,45 +442,53 @@ print ' <div class="modal">
                     </tr>
                 </table>
             </div>
-            <div class="item1_modal_help">
-                <div class="img_help_modal_1">
-                    <img src="'.$modal_decode['help']['img_src_1'].'" srcset="'.$modal_decode['help']['img_srcset_1'].'">
+
+            <a class="text_box_help_modal" href="'.$modal_decode['help']['link_1'].'">
+                <div class="item1_modal_help">
+                    <div class="img_help_modal_1">
+                        <img src="'.$modal_decode['help']['img_src_1'].'" srcset="'.$modal_decode['help']['img_srcset_1'].'">
+                    </div>
+                    <div class="box_help_modal">
+                        <table width="100%" height="100%">
+                            <tr>
+                                <td align="center">
+                                '.$modal_decode['help']['text_1'].'</td>
+                            </tr>
+                        </table>
+                    </div>    
                 </div>
-                <div class="box_help_modal">
-                    <table width="100%" height="100%">
-                        <tr>
-                            <td align="center">
-                            <a class="text_box_help_modal" href="'.$modal_decode['help']['link_1'].'">'.$modal_decode['help']['text_1'].'</a></td>
-                        </tr>
-                    </table>
+            </a>
+
+            <a class="text_box_help_modal" href="'.$modal_decode['help']['link_2'].'">
+                <div class="item1_modal_help">
+                    <div class="img_help_modal_2">
+                        <img src="'.$modal_decode['help']['img_src_2'].'" srcset="'.$modal_decode['help']['img_srcset_2'].'">
+                    </div>
+                    <div class="box_help_modal">
+                        <table width="100%" height="100%">
+                            <tr>
+                                <td align="center">
+                                '.$modal_decode['help']['text_2'].'</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-            </div>
-            <div class="item1_modal_help">
-                <div class="img_help_modal_2">
-                    <img src="'.$modal_decode['help']['img_src_2'].'" srcset="'.$modal_decode['help']['img_srcset_2'].'">
+            </a>
+            <a class="text_box_help_modal" href="'.$modal_decode['help']['link_3'].'">
+                <div class="item1_modal_help">
+                    <div class="img_help_modal_3">
+                        <img src="'.$modal_decode['help']['img_src_3'].'" srcset="'.$modal_decode['help']['img_srcset_3'].'">
+                    </div>
+                    <div class="box_help_modal">
+                        <table width="100%" height="100%">
+                            <tr>
+                                <td align="center">
+                                '.$modal_decode['help']['text_3'].'</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-                <div class="box_help_modal">
-                    <table width="100%" height="100%">
-                        <tr>
-                            <td align="center">
-                            <a class="text_box_help_modal" href="'.$modal_decode['help']['link_2'].'">'.$modal_decode['help']['text_2'].'</a></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="item1_modal_help">
-                <div class="img_help_modal_3">
-                    <img src="'.$modal_decode['help']['img_src_3'].'" srcset="'.$modal_decode['help']['img_srcset_3'].'">
-                </div>
-                <div class="box_help_modal">
-                    <table width="100%" height="100%">
-                        <tr>
-                            <td align="center">
-                            <a class="text_box_help_modal" href="'.$modal_decode['help']['link_3'].'">'.$modal_decode['help']['text_3'].'</a></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
+            </a>
           </div>
         </div>
       </div>';

@@ -163,10 +163,7 @@ if (! $server) $server='127.0.0.1';
 $wikihelp='EN:Setup EMails|FR:Paramétrage EMails|ES:Configuración EMails';
 llxHeader('',$langs->trans("Setup"),$wikihelp);
 
-print '<div class="Inicio" style="width: 400px">
-<label>Configuracion de Correo Saliente</label>
-</div>';
-print '<div style="margin-left:16px;>"';
+
 
 //print load_fiche_titre($langs->trans("EMailsSetup"),'','title_setup');
 
@@ -274,7 +271,10 @@ if ($action == 'edit')
                })';
 		print '</script>'."\n";
 	}
-
+	print '<div class="Inicio" style="width: 400px">
+	<label>Configuracion de Correo Saliente</label>
+	</div>';
+	print '<div style="margin-left:16px;>"';
 	print '<form method="post" action="'.$_SERVER["PHP_SELF"].'">';
 	print '<input type="hidden" name="token" value="'.$_SESSION['newtoken'].'">';
 	print '<input type="hidden" name="action" value="update">';

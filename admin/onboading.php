@@ -207,7 +207,13 @@ $data_decode = json_decode($data, true);
             </div>
         </div>
         <div id="header" style="height: 97px;border-bottom: solid 1px #eaeaea;margin-left:0px;margin-right:0px;">
-            0
+        <div id="inicio" style="width: 56px;
+  height: 32px;
+  margin-top:32px;
+  margin-left:32px;
+  float:left;">
+            <img src="../img/group-2.svg" class="">
+            </div>
         </div>
         <div id="header" style="height: 95px;border-bottom: solid 1px #eaeaea;margin-left:0px;margin-right:0px;">
             0

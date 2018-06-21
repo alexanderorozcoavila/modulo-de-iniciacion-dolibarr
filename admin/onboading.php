@@ -213,6 +213,7 @@ $data_decode = json_decode($data, true);
             </div>
             <div class="Rectangle-11 open-modal" for="modal-trigger-center">
                 <div class="Comenzar open-modal" for="modal-trigger-center">
+                <label for="modal-trigger-center" class="open-modal" style="cursor:pointer;">
                 <table  for="modal-trigger-center" class="open-modal" cellspacing="0" cellpadding="0" style="width: 128px;
                     height: 32px;">
                         <tr for="modal-trigger-center" class="open-modal">
@@ -242,6 +243,7 @@ $data_decode = json_decode($data, true);
                             </td>
                         </tr>
                     </table>
+</label>
                 </div>
             </div>
         </div>

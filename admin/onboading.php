@@ -191,41 +191,81 @@ $data_decode = json_decode($data, true);
     <div id="margenes" style="margin-left:8px;margin-right:7px;">
         <div id="header" style="height: 63px;border-bottom: solid 1px #eaeaea;margin-left:0px;margin-right:0px;">
             <div id="inicio" style="width: 56px;
-  height: 32px;
-  margin-top:16px;
-  margin-left:8px;
-  float:left;
-  font-family: Roboto;
-  font-size: 22px;
-  font-weight: 300;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.45;
-  letter-spacing: 0.6px;
-  color: #0a4d7c;">
+            height: 32px;
+            margin-top:16px;
+            margin-left:8px;
+            float:left;
+            font-family: Roboto;
+            font-size: 22px;
+            font-weight: 300;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.45;
+            letter-spacing: 0.6px;
+            color: #0a4d7c;">
                 Inicio
             </div>
         </div>
         <div id="header" style="height: 97px;border-bottom: solid 1px #eaeaea;margin-left:0px;margin-right:0px;">
-        <div id="inicio" style="width: 56px;
-  height: 32px;
-  margin-top:32px;
-  margin-left:32px;
-  float:left;">
+            <div id="inicio" style="width: 56px;
+            height: 32px;
+            margin-top:32px;
+            margin-left:32px;
+            float:left;">
             <img src="../img/group-2.svg" class="">
+            </div>
+            <div id="inicio" style="width: 280px;
+            height: 16px;
+            margin-top:30px;
+            margin-left:32px;
+            float:left;">
+            
             </div>
         </div>
         <div id="header" style="height: 95px;border-bottom: solid 1px #eaeaea;margin-left:0px;margin-right:0px;">
-            0
+        <div id="inicio" style="width: 35.3px;
+  height: 40px;
+            margin-top:26px;
+            margin-left:43px;
+            float:left;">
+            <img src="../img/group-3.svg" class="">
+            </div>
         </div>
         <div id="header" style="height: 95px;border-bottom: solid 1px #eaeaea;margin-left:0px;margin-right:0px;">
-            0
+        <div id="inicio" style="width: 38px;
+  height: 40px;
+            margin-top:26px;
+            margin-left:42px;
+            float:left;">
+            <img src="../img/group-4.svg" class="">
+            </div>
         </div>
         <div id="header" style="height: 95px;border-bottom: solid 1px #eaeaea;margin-left:0px;margin-right:0px;">
-            0
+        <div id="inicio" style="width: 40px;
+  height: 44px;
+            margin-top:22px;
+            margin-left:40px;
+            float:left;">
+            <img src="../img/group-5.svg" class="">
+            </div>
         </div>
         <div id="header" style="height: 95px;border-bottom: solid 1px #eaeaea;margin-left:0px;margin-right:0px;">
-            0
+        <div id="inicio" style="width: 40px;
+  height: 37px;
+            margin-top:22px;
+            margin-left:42px;
+            float:left;">
+            <img src="../img/group-7.svg" class="">
+            </div>
+        </div>
+        <div id="header" style="height: 95px;border-bottom: solid 1px #eaeaea;margin-left:0px;margin-right:0px;">
+        <div id="inicio" style="width: 45.6px;
+  height: 24px;
+            margin-top:27px;
+            margin-left:41px;
+            float:left;">
+            <img src="../img/group-6.svg" class="">
+            </div>
         </div>
     </div>
 </div>

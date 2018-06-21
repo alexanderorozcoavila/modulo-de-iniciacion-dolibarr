@@ -190,7 +190,21 @@ $data_decode = json_decode($data, true);
 <div class="Rectangle-5">
     <div id="margenes" style="margin-left:8px;margin-right:7px;">
         <div id="header" style="height: 63px;border-bottom: solid 1px #eaeaea;margin-left:0px;margin-right:0px;">
-            0
+            <div id="inicio" style="width: 56px;
+  height: 32px;
+  margin-top:16px;
+  margin-left:8px;
+  float:left;
+  font-family: Roboto;
+  font-size: 22px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.45;
+  letter-spacing: 0.6px;
+  color: #0a4d7c;">
+                Inicio
+            </div>
         </div>
         <div id="header" style="height: 97px;border-bottom: solid 1px #eaeaea;margin-left:0px;margin-right:0px;">
             0

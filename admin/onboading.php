@@ -69,7 +69,7 @@ $form = new Form($db);
 
 $page_name = "Onboading";
 llxHeader('', $langs->trans($page_name));
-print "<style>@import url('https://fonts.googleapis.com/css?family=Roboto');</style>";
+print "<style>@import url('https://fonts.googleapis.com/css?family='Roboto', sans-serif  !important;');</style>";
 
 // Configuration header
 //$head = onboadingAdminPrepareHead();
@@ -191,80 +191,256 @@ $data_decode = json_decode($data, true);
     <div id="margenes" style="margin-left:8px;margin-right:7px;">
         <div id="header" style="height: 63px;border-bottom: solid 1px #eaeaea;margin-left:0px;margin-right:0px;">
             <div id="inicio" style="width: 56px;
-            height: 32px;
-            margin-top:16px;
-            margin-left:8px;
-            float:left;
-            font-family: Roboto;
-            font-size: 22px;
-            font-weight: 300;
-            font-style: normal;
-            font-stretch: normal;
-            line-height: 1.45;
-            letter-spacing: 0.6px;
-            color: #0a4d7c;">
-                Inicio
+                height: 32px;
+                margin-top:16px;
+                margin-left:8px;
+                float:left;
+                font-family: 'Roboto', sans-serif  !important;;
+                font-size: 22px;
+                font-weight: 300;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.45;
+                letter-spacing: 0.6px;
+                color: #0a4d7c;">
+                    Inicio
             </div>
         </div>
         <div id="header" style="height: 97px;border-bottom: solid 1px #eaeaea;margin-left:0px;margin-right:0px;">
             <div id="inicio" style="width: 56px;
-            height: 32px;
-            margin-top:32px;
-            margin-left:32px;
-            float:left;">
-            <img src="../img/group-2.svg" class="">
+                height: 32px;
+                margin-top:32px;
+                margin-left:32px;
+                float:left;">
+                <img src="../img/group-2.svg" class="">
             </div>
             <div id="inicio" style="width: 280px;
-            height: 16px;
-            margin-top:30px;
-            margin-left:32px;
-            float:left;">
-            
+                height: 95px;float:left;margin-top:0px;margin-left:32px;">
+                <table style="width: 280px;height: 95px;" cellpanding="0" cellspacing="0" >
+                    <tr style="width: 280px;height: 47.5px;">
+                        <td style="vertical-align: bottom;
+                        text-align: left;
+                        font-family: 'Roboto', sans-serif  !important;;
+                        font-size: 14px;
+                        font-weight: normal;
+                        font-style: normal;
+                        font-stretch: normal;
+                        line-height: normal;
+                        letter-spacing: normal;
+                        color: #0a4d7c;">Clientes y Proveedores</td>
+                    </tr>
+                    <tr style="width: 280px;height: 47.5px;">
+                        <td style="vertical-align: baseline;
+                        text-align: justify;
+                        font-family: 'Roboto', sans-serif  !important;;
+                        font-size: 12px;
+                        font-weight: normal;
+                        font-style: normal;
+                        font-stretch: normal;
+                        line-height: 1.33;
+                        letter-spacing: normal;
+                        color: #9b9b9b;">Registre todas las personas que interactúan con su empresa</td>
+                    </tr>
+                </table>
             </div>
         </div>
+
         <div id="header" style="height: 95px;border-bottom: solid 1px #eaeaea;margin-left:0px;margin-right:0px;">
         <div id="inicio" style="width: 35.3px;
-  height: 40px;
-            margin-top:26px;
-            margin-left:43px;
-            float:left;">
-            <img src="../img/group-3.svg" class="">
+                height: 40px;
+                margin-top:26px;
+                margin-left:43px;
+                float:left;">
+                <img src="../img/group-3.svg" class="">
+            </div>
+            <div id="inicio" style="width: 280px;
+                height: 95px;
+                float:left;margin-top:0px;margin-left:41.7px;">
+                <table style="width: 280px;height: 95px;" cellpanding="0" cellspacing="0" >
+                    <tr style="width: 280px;height: 47.5px;">
+                        <td style="vertical-align: bottom;
+                        text-align: left;
+                        font-family: 'Roboto', sans-serif  !important;;
+                        font-size: 14px;
+                        font-weight: normal;
+                        font-style: normal;
+                        font-stretch: normal;
+                        line-height: normal;
+                        letter-spacing: normal;
+                        color: #0a4d7c;">Productos y Servicios</td>
+                    </tr>
+                    <tr style="width: 280px;height: 47.5px;">
+                        <td style="vertical-align: baseline;
+                        text-align: justify;
+                        font-family: 'Roboto', sans-serif  !important;;
+                        font-size: 12px;
+                        font-weight: normal;
+                        font-style: normal;
+                        font-stretch: normal;
+                        line-height: 1.33;
+                        letter-spacing: normal;
+                        color: #9b9b9b;">Cargue su catálogo de productos o servicios</td>
+                    </tr>
+                </table>
             </div>
         </div>
         <div id="header" style="height: 95px;border-bottom: solid 1px #eaeaea;margin-left:0px;margin-right:0px;">
         <div id="inicio" style="width: 38px;
-  height: 40px;
-            margin-top:26px;
-            margin-left:42px;
-            float:left;">
-            <img src="../img/group-4.svg" class="">
+                height: 40px;
+                margin-top:26px;
+                margin-left:42px;
+                float:left;">
+                <img src="../img/group-4.svg" class="">
+            </div>
+            <div id="inicio" style="width: 280px;
+                height: 95px;
+                float:left;margin-top:0px;margin-left:40px;">
+                <table style="width: 280px;height: 95px;" cellpanding="0" cellspacing="0" >
+                    <tr style="width: 280px;height: 47.5px;">
+                        <td style="vertical-align: bottom;
+                        text-align: left;
+                        font-family: 'Roboto', sans-serif  !important;;
+                        font-size: 14px;
+                        font-weight: normal;
+                        font-style: normal;
+                        font-stretch: normal;
+                        line-height: normal;
+                        letter-spacing: normal;
+                        color: #0a4d7c;">Comercial</td>
+                    </tr>
+                    <tr style="width: 280px;height: 47.5px;">
+                        <td style="vertical-align: baseline;
+                        text-align: justify;
+                        font-family: 'Roboto', sans-serif  !important;;
+                        font-size: 12px;
+                        font-weight: normal;
+                        font-style: normal;
+                        font-stretch: normal;
+                        line-height: 1.33;
+                        letter-spacing: normal;
+                        color: #9b9b9b;">Gestione los pedidos y presupuestos que crea para clientes o proveedores</td>
+                    </tr>
+                </table>
             </div>
         </div>
+
         <div id="header" style="height: 95px;border-bottom: solid 1px #eaeaea;margin-left:0px;margin-right:0px;">
-        <div id="inicio" style="width: 40px;
-  height: 44px;
-            margin-top:22px;
-            margin-left:40px;
-            float:left;">
-            <img src="../img/group-5.svg" class="">
+            <div id="inicio" style="width: 40px;
+                height: 44px;
+                margin-top:24.5px;
+                margin-left:40px;
+                float:left;">
+                <img src="../img/group-5.svg" class="">
+            </div>
+            <div id="inicio" style="width: 208px;
+                height: 95px;
+                float:left;margin-top:0px;margin-left:40px;">
+                <table style="width: 280px;height: 95px;" cellpanding="0" cellspacing="0" >
+                    <tr style="width: 280px;height: 47.5px;">
+                        <td style="vertical-align: bottom;
+                        text-align: left;
+                        font-family: 'Roboto', sans-serif  !important;;
+                        font-size: 14px;
+                        font-weight: normal;
+                        font-style: normal;
+                        font-stretch: normal;
+                        line-height: normal;
+                        letter-spacing: normal;
+                        color: #0a4d7c;">Financiera</td>
+                    </tr>
+                    <tr style="width: 280px;height: 47.5px;">
+                        <td style="vertical-align: baseline;
+                        text-align: justify;
+                        font-family: 'Roboto', sans-serif  !important;;
+                        font-size: 12px;
+                        font-weight: normal;
+                        font-style: normal;
+                        font-stretch: normal;
+                        line-height: 1.33;
+                        letter-spacing: normal;
+                        color: #9b9b9b;">Genere facturas para sus pedidos realizados. Registre los pagos para cada factura</td>
+                    </tr>
+                </table>
             </div>
         </div>
+
         <div id="header" style="height: 95px;border-bottom: solid 1px #eaeaea;margin-left:0px;margin-right:0px;">
-        <div id="inicio" style="width: 40px;
-  height: 37px;
-            margin-top:22px;
-            margin-left:42px;
-            float:left;">
-            <img src="../img/group-7.svg" class="">
+            <div id="inicio" style="width: 40px;
+                height: 37px;
+                margin-top:28px;
+                margin-left:42px;
+                float:left;">
+                <img src="../img/group-7.svg" class="">
+            </div>
+            <div id="inicio" style="width: 280px;
+                height: 95px;
+                float:left;margin-top:0px;margin-left:38px;">
+                <table style="width: 280px;height: 95px;" cellpanding="0" cellspacing="0" >
+                    <tr style="width: 280px;height: 47.5px;">
+                        <td style="vertical-align: bottom;
+                        text-align: left;
+                        font-family: 'Roboto', sans-serif  !important;;
+                        font-size: 14px;
+                        font-weight: normal;
+                        font-style: normal;
+                        font-stretch: normal;
+                        line-height: normal;
+                        letter-spacing: normal;
+                        color: #0a4d7c;">Cuentas</td>
+                    </tr>
+                    <tr style="width: 280px;height: 47.5px;">
+                        <td style="vertical-align: baseline;
+                        text-align: justify;
+                        font-family: 'Roboto', sans-serif  !important;;
+                        font-size: 12px;
+                        font-weight: normal;
+                        font-style: normal;
+                        font-stretch: normal;
+                        line-height: 1.33;
+                        letter-spacing: normal;
+                        color: #9b9b9b;">Cree sus cuentas y registre todas las transacciones que pasen por su empresa.</td>
+                    </tr>
+                </table>
             </div>
         </div>
+
         <div id="header" style="height: 95px;border-bottom: solid 1px #eaeaea;margin-left:0px;margin-right:0px;">
-        <div id="inicio" style="width: 45.6px;
-  height: 24px;
-            margin-top:27px;
-            margin-left:41px;
-            float:left;">
-            <img src="../img/group-6.svg" class="">
+            <div id="inicio" style="width: 45.6px;
+                height: 24px;
+                margin-top:27px;
+                margin-left:41px;
+                float:left;">
+                <img src="../img/group-6.svg" class="">
+            </div>
+            <div id="inicio" style="width: 280px;
+                height: 95px;
+                float:left;margin-top:0px;margin-left:32px;">
+                <table style="width: 280px;height: 95px;" cellpanding="0" cellspacing="0" >
+                    <tr style="width: 280px;height: 47.5px;">
+                        <td style="vertical-align: bottom;
+                        text-align: left;
+                        font-family: 'Roboto', sans-serif  !important;;
+                        font-size: 14px;
+                        font-weight: normal;
+                        font-style: normal;
+                        font-stretch: normal;
+                        line-height: normal;
+                        letter-spacing: normal;
+                        color: #0a4d7c;">Recursos Humanos</td>
+                    </tr>
+                    <tr style="width: 280px;height: 47.5px;">
+                        <td style="vertical-align: baseline;
+                        text-align: justify;
+                        font-family: 'Roboto', sans-serif  !important;;
+                        font-size: 12px;
+                        font-weight: normal;
+                        font-style: normal;
+                        font-stretch: normal;
+                        line-height: 1.33;
+                        letter-spacing: normal;
+                        color: #9b9b9b;">Tenga registro de las vacaciones o gastos de los empleados</td>
+                    </tr>
+                </table>            
             </div>
         </div>
     </div>

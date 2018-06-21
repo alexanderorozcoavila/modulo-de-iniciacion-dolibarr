@@ -1,3 +1,189 @@
+#item1{
+  height: 97px;
+  border-bottom: solid 1px #eaeaea;
+  margin-left:0px;
+  margin-right:0px;
+}
+
+#item1_img{
+  width: 56px;
+  height: 32px;
+  margin-top:32px;
+  margin-left:32px;
+  float:left;
+}
+
+#item1_table{
+  width: 280px;
+  height: 95px;
+  float:left;
+  margin-top:0px;
+  margin-left:32px;
+}
+
+#item1_links{
+  height: 32px;
+  margin-top:19px;
+  margin-left:32px;
+  float:right;
+}
+
+#item2{
+  height: 95px;
+  border-bottom: solid 1px #eaeaea;
+  margin-left:0px;
+  margin-right:0px;
+}
+
+#item2_img{
+  width: 35.3px;
+  height: 40px;
+  margin-top:26px;
+  margin-left:43px;
+  float:left;
+}
+
+#item2_table{
+  width: 280px;
+  height: 95px;
+  float:left;
+  margin-top:0px;
+  margin-left:41.7px;
+}
+
+#item3{
+  height: 95px;
+  border-bottom: solid 1px #eaeaea;
+  margin-left:0px;
+  margin-right:0px;
+}
+
+#item3_img{
+  width: 38px;
+  height: 40px;
+  margin-top:26px;
+  margin-left:42px;
+  float:left;
+}
+
+#item3_table{
+  width: 280px;
+  height: 95px;
+  float:left;
+  margin-top:0px;
+  margin-left:40px;
+}
+
+#item4{
+  height: 95px;
+  border-bottom: solid 1px #eaeaea;
+  margin-left:0px;
+  margin-right:0px;
+}
+
+#item4_img{
+  width: 40px;
+  height: 44px;
+  margin-top:24.5px;
+  margin-left:40px;
+  float:left;
+}
+
+#item4_table{
+  width: 208px;
+  height: 95px;
+  float:left;
+  margin-top:0px;
+  margin-left:40px;
+}
+
+#item5{
+  height: 95px;
+  border-bottom: solid 1px #eaeaea;
+  margin-left:0px;
+  margin-right:0px;
+}
+
+#item5_img{
+  width: 40px;
+  height: 37px;
+  margin-top:28px;
+  margin-left:42px;
+  float:left;
+}
+
+#item5_table{
+  width: 280px;
+  height: 95px;
+  float:left;
+  margin-top:0px;
+  margin-left:38px;
+}
+
+#item6{
+  height: 95px;
+  border-bottom: solid 1px #eaeaea;
+  margin-left:0px;
+  margin-right:0px;
+}
+
+#item6_img{
+  width: 45.6px;
+  height: 24px;
+  margin-top:27px;
+  margin-left:41px;
+  float:left;
+}
+
+#item6_table{
+  width: 280px;
+  height: 95px;
+  float:left;
+  margin-top:0px;
+  margin-left:32px;
+}
+
+
+
+.table_items_list{
+  width: 280px;
+  height: 95px;
+}
+
+.table_tr_items_list{
+  width: 280px;
+  height: 47.5px;
+}
+
+.table_tr_td_items_list_up{
+  vertical-align: bottom;
+  text-align: left;
+  font-family: 'Roboto', sans-serif  !important;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0a4d7c;
+}
+
+.table_tr_td_items_list_down{
+  vertical-align: baseline;
+  text-align: justify;
+  font-family: 'Roboto', sans-serif  !important;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  color: #9b9b9b;
+}
+
+
+
+
 .cont{ width: 100%; margin: 0 auto 0 auto; text-align: left;}
 
 .contenido{ width: 300px;  border:1px solid #000;}
@@ -9,6 +195,10 @@
 margin-right: 0px !important;
 margin-top: -16px !important;
 }
+
+
+
+
 
 .Inicio {
 font-family: 'Roboto', sans-serif  !important;
@@ -40,7 +230,7 @@ background-color: #f9f9f9;
   border-radius: 3px;
   float:right;
   border: solid 1px #b10053;
-  margin-top:48px;
+  margin-top:14px;
   margin-right:24px;
   background-color: #ffffff;
 }
@@ -48,8 +238,7 @@ background-color: #f9f9f9;
 .Comenzar {
   width: 72px;
   height: 16px;
-  /*margin-left:16px;
-  margin-top:5px;*/
+  
   font-family: 'Roboto', sans-serif  !important;
   font-size: 14px;
   font-weight: normal;
@@ -80,7 +269,7 @@ background-color: #f9f9f9;
   width: 32px;
   object-fit: contain;
   float:right;
-  margin-top:48px;
+  margin-top:16px;
   margin-right:16px;
 }
 .Group-9 img {
@@ -181,6 +370,26 @@ background-color: #f9f9f9;
   margin-right:15px;
   margin-top:36px;
   border-left: solid 1px #eaeaea;
+}
+
+.div_list_link_item_n{
+  float:right;
+margin-right:15px;
+margin-top:36px;
+}
+
+.div_list_link_item_n a{
+  height: 32px;
+  font-family: 'Roboto', sans-serif  !important;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.29;
+  letter-spacing: normal;
+  text-align: center;
+  color: #b10053;
+  margin-left:15px;
 }
 
 .div_list_link_item a{

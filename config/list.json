@@ -31,6 +31,10 @@
             "icon-src":"../img/group-2.svg",
             "icon-srcset":"../img/group-2@2x.svg 2x,../img/group-2@3x.svg 3x",
             "description":"Registre todas las personas que interactúan con su empresa",
+            "item":"item1",
+            "item_img":"item1_img",
+            "item_table":"item1_table",
+            "item_links":"item1_links",
             "list-links":{
                 "0":{
                     "title":"Crear un cliente",
@@ -54,6 +58,10 @@
             "icon-src":"../img/group-3.svg",
             "icon-srcset":"../img/group-3@2x.svg 2x,../img/group-3@3x.svg 3x",
             "description":"Cargue su catálogo de productos o servicios",
+            "item":"item2",
+            "item_img":"item2_img",
+            "item_table":"item2_table",
+            "item_links":"item2_links",
             "list-links":{
                 "0":{
                     "title":"Crear catalogo",
@@ -82,6 +90,10 @@
             "icon-src":"../img/group-4.svg",
             "icon-srcset":"../img/group-4@2x.svg 2x,../img/group-4@3x.svg 3x",
             "description":"Gestione los pedidos y presupuestos que crea para clientes o proveedores",
+            "item":"item3",
+            "item_img":"item3_img",
+            "item_table":"item3_table",
+            "item_links":"item3_links",
             "list-links":{
                 "0":{
                     "title":"Crear presupuesto",
@@ -100,6 +112,10 @@
             "icon-src":"../img/group-5.svg",
             "icon-srcset":"../img/group-5@2x.svg 2x,../img/group-5@3x.svg 3x",
             "description":"Genere facturas para sus pedidos realizados. Registre los pagos para cada factura.",
+            "item":"item4",
+            "item_img":"item4_img",
+            "item_table":"item4_table",
+            "item_links":"item4_links",
             "list-links":{
                 "0":{
                     "title":"Crear una factura",
@@ -128,6 +144,10 @@
             "icon-src":"../img/group-7.svg",
             "icon-srcset":"../img/group-7@2x.svg 2x,../img/group-7@3x.svg 3x",
             "description":"Cree sus cuentas y registre todas las transacciones que pasen por su empresa.",
+            "item":"item5",
+            "item_img":"item5_img",
+            "item_table":"item5_table",
+            "item_links":"item5_links",
             "list-links":{
                 "0":{
                     "title":"Crear cuentas",
@@ -146,6 +166,10 @@
             "icon-src":"../img/group-6.svg",
             "icon-srcset":"../img/group-6@2x.svg 2x,../img/group-6@3x.svg 3x",
             "description":"Tenga registro de las vacaciones o gastos de los empleados.",
+            "item":"item6",
+            "item_img":"item6_img",
+            "item_table":"item6_table",
+            "item_links":"item6_links",
             "list-links":{
                 "0":{
                     "title":"Crear cuentas",

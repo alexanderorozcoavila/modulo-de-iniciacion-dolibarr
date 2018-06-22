@@ -26,8 +26,8 @@
         }
     },
     "config":{
-        "correo_default":"robot@domain.com",
-        "empresa_defaul":"omar company"
+        "correo_default":"root@testa.com",
+        "empresa_defaul":"testa"
     },
     "body-list":{
         "0":{

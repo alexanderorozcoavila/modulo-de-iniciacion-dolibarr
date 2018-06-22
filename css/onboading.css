@@ -918,6 +918,7 @@ box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);
 .div_list_link_item_n:hover {
   background:#f8f1f4;
   color: #b10053;
+  text-decoration: none;
 }
 
 
@@ -925,6 +926,7 @@ box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);
 .div_list_link_item:hover {
   background:#f8f1f4;
   color: #b10053;
+  text-decoration: none;
 }
 
 .Group-9:hover{
@@ -936,3 +938,4 @@ box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);
   background:#f8f1f4;
   color: #b10053;
 }
+

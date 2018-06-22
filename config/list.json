@@ -42,12 +42,12 @@
             "list-links":{
                 "0":{
                     "title":"Crear un cliente",
-                    "link":"",
-                    "css":""
+                    "link":"/1",
+                    "css":"2"
                 },
                 "2":{
                     "title":"Crear un proveedor",
-                    "link":"",
+                    "link":"/3",
                     "css":""
                 },
                 "3":{

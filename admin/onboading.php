@@ -313,15 +313,15 @@ foreach ($list['list-links'] as $key=>$a) {
     $tot = count($list['list-links']);
     if ($key == $tot){
         ?>
-        <div class="div_list_link_item_n">
-            <a href="<?php echo $a['link'];?>"><?php echo $a['title'];?></a>
+        <div class="div_list_link_item_n" onclick="window.location.href = '<?php echo $a['link'];?>';" style="cursor: pointer;">
+            <a href="<?php echo $a['link'];?>" style="text-decoration: none;"><?php echo $a['title'];?></a>
         </div>
 <?php
     }else{
         ?>
 
-        <div class="div_list_link_item">
-            <a href="<?php echo $a['link'];?>"><?php echo $a['title'];?></a>
+        <div class="div_list_link_item" onclick="window.location.href = '<?php echo $a['link'];?>';" style="cursor: pointer;">
+            <a href="<?php echo $a['link'];?>" style="text-decoration: none;"><?php echo $a['title'];?></a>
         </div>
         <div class="div_list_link_item2">
         </div>

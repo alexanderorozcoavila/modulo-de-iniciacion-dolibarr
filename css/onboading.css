@@ -282,7 +282,7 @@ background-color: #f9f9f9;
 .Line {
   width: 100%;
   
-  border-bottom: solid 0.5px #eaeaea;
+  border-bottom: solid 0.1px #eaeaea;
 }
 
 .div_line{
@@ -489,7 +489,7 @@ margin-top:36px;
 .div_divider_modal_correo{
   float:left;
   margin-left:-1px;
-  margin-top:-6px;
+  margin-top:-5px;
   width: 224px;
   height: 1px;
 }
@@ -580,7 +580,7 @@ margin-top:36px;
 
 .Line3_active{
   width: 226px;
-  border-bottom: solid 1px #0a4d7c;
+  border-bottom: solid 0.5px #0a4d7c;
 }
 
 .div_line_modal_empresa{

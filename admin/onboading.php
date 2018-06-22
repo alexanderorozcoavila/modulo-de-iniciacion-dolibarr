@@ -86,6 +86,10 @@ print "<style>@import url('https://fonts.googleapis.com/css?family='Roboto', san
 //print $_SERVER["PHP_SELF"];
 //print_r($conf);
 
+
+$data = file_get_contents("../config/list.json");
+$data_decode = json_decode($data, true);
+
 if($action=='comenzar'){
 
 ?>
@@ -142,6 +146,16 @@ if (! empty($setupcompanynotcomplete))
 
 }
 
+if($conf->global->MAIN_INFO_SOCIETE_NOM == $data_decode['config']['empresa_defaul']){
+    $empresa_box = "div_line_modal_empresa";
+    $empresa_box_bg = "";
+    $empresa_line = "Line3";
+    $empresa_text = "text_status_modal_inactive";
+    $empresa_text_text = "X SIN COMPLETAR";
+    $e = 0;
+    $e1 = 1;
+}
+
 
 if (empty($conf->global->MAIN_MAIL_SMTP_SERVER) || empty($conf->global->MAIN_MAIL_SMTP_PORT)) $setupmailnotcomplete=1;
 //print img_picto('','puce').' '.$langs->trans("SetupDescription3", DOL_URL_ROOT.'/admin/company.php?mainmenu=home'.(empty($setupcompanynotcomplete)?'':'&action=edit'), $langs->transnoentities("Setup"), $langs->transnoentities("MenuCompanySetup"));
@@ -155,6 +169,18 @@ if (! empty($setupmailnotcomplete))
     $c = 0;
     $c1 = 1;
 }
+
+if ($conf->global->MAIN_MAIL_EMAIL_FROM == $data_decode['config']['correo_default'])
+{
+    $correo_box = "div_line_modal_correo";
+    $correo_box_bg = "";
+    $correo_line = "Line3";
+    $correo_text = "text_status_modal_inactive";
+    $correo_text_text = "X SIN COMPLETAR";
+    $c = 0;
+    $c1 = 1;
+}
+
 
 $sql = "SELECT u.rowid, u.lastname, u.firstname, u.admin, u.login, u.fk_soc, u.datec, u.statut";
 $sql.= ", u.entity";
@@ -201,8 +227,7 @@ $c_circle =  $c1 + $e1 + $q1;
 
 
 
-$data = file_get_contents("../config/list.json");
-$data_decode = json_decode($data, true);
+
 
 ?>
 
@@ -233,7 +258,7 @@ $data_decode = json_decode($data, true);
             <div class="Rectangle-11 open-modal" id="btn_modal" for="modal-trigger-center">
                 <div class="Comenzar open-modal" for="modal-trigger-center">
                 <label for="modal-trigger-center" class="open-modal" style="cursor:pointer;">
-                <table  for="modal-trigger-center" class="open-modal" cellspacing="0" cellpadding="0" style="width: 128px;
+                <table id="table_comenzar" for="modal-trigger-center" class="open-modal" cellspacing="0" cellpadding="0" style="width: 128px;
                     height: 32px;">
                         <tr for="modal-trigger-center" class="open-modal">
                             <td for="modal-trigger-center" class="open-modal" style="vertical-align: middle;text-align: right;cursor:pointer;color:#b10053;" width="88px">
@@ -294,8 +319,11 @@ foreach ($list['list-links'] as $key=>$a) {
 <?php
     }else{
         ?>
+
         <div class="div_list_link_item">
             <a href="<?php echo $a['link'];?>"><?php echo $a['title'];?></a>
+        </div>
+        <div class="div_list_link_item2">
         </div>
 <?php
     }
@@ -389,7 +417,7 @@ print ' <div class="modal">
                         </div>
                         <div class="div_text_modal_correo">
                             '.$modal_decode['init']['text1-empresa'].'
-                            <hr style="margin-top: 10px;visibility:hidden;">
+                            <hr style="margin-top: 12px;visibility:hidden;">
                             <span class="modal_title_2">'.$modal_decode['init']['text2-empresa'].'</span>
                         </div>
                         <div class="div_divider_modal_correo">
@@ -419,7 +447,7 @@ print ' <div class="modal">
                         </div>
                         <div class="div_text_modal_correo">
                             '.$modal_decode['init']['text1-equipo'].'
-                            <hr style="margin-top: 10px;visibility:hidden;">
+                            <hr style="margin-top: 12px;visibility:hidden;">
                             <span class="modal_title_2">'.$modal_decode['init']['text2-equipo'].'</span>
                         </div>
                         <div class="div_divider_modal_correo">

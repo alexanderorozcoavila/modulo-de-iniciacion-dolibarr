@@ -25,6 +25,10 @@
             "onclick":""
         }
     },
+    "config":{
+        "correo_default":"robot@domain.com",
+        "empresa_defaul":"omar company"
+    },
     "body-list":{
         "0":{
             "title":"Clientes y Proveedores",

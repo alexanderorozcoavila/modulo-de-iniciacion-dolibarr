@@ -536,10 +536,28 @@ margin-top:36px;
   color: #0a4d7c;
 }
 
-.modal_title_1:hover{
-  opacity: 0.04;
-  background-color: #c60656;
-  cursor: pointer;
+.div_line_modal_correo:hover {
+  border-radius: 3px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+  background-color: #ffffff;
+  border: solid 1px #eaeaea;
+  
+}
+
+.div_line_modal_empresa:hover {
+  border-radius: 3px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+  background-color: #ffffff;
+  border: solid 1px #eaeaea;
+  
+}
+
+.div_line_modal_equipo:hover {
+  border-radius: 3px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+  background-color: #ffffff;
+  border: solid 1px #eaeaea;
+  
 }
 
 
@@ -907,6 +925,10 @@ box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);
 .div_list_link_item:hover {
   background:#f8f1f4;
   color: #b10053;
+}
+
+.Group-9:hover{
+  background:#f8f1f4;
 }
 
 /* unvisited link */

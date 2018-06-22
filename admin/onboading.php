@@ -410,7 +410,7 @@ print ' <div class="modal">
                 <a class="modal_title_1" href="'.DOL_URL_ROOT.'/'.$modal_decode['init']['link-empresa'].'">
                     <div class="'.$empresa_box.'">
                         <div class="div_icon_modal_correo">
-                        <img src="../img/ic-markunread.png"
+                        <img src="../img/clipboard-list.svg"
                                 srcset="../img/ic-markunread@2x.png 2x,
                                         ../img/ic-markunread@3x.png 3x"
                                 class="ic_markunread">
@@ -440,7 +440,7 @@ print ' <div class="modal">
                 <a class="modal_title_1" href="'.DOL_URL_ROOT.'/'.$modal_decode['init']['link-equipo'].'">
                     <div class="'.$equipo_box.'">
                         <div class="div_icon_modal_correo">
-                            <img src="../img/ic-markunread.png"
+                            <img src="../img/user-friends.svg"
                             srcset="../img/ic-markunread@2x.png 2x,
                                     ../img/ic-markunread@3x.png 3x"
                             class="ic_markunread">

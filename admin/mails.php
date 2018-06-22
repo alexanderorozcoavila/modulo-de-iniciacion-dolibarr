@@ -125,7 +125,7 @@ if ($action == 'update' && empty($_POST["cancel"]))
 	dolibarr_set_const($db, "MAIN_MAIL_AUTOCOPY_TO",    GETPOST("MAIN_MAIL_AUTOCOPY_TO"),'chaine',0,'',$conf->entity);
     dolibarr_set_const($db, 'MAIN_MAIL_DEFAULT_FROMTYPE',GETPOST('MAIN_MAIL_DEFAULT_FROMTYPE'),'chaine',0,'',$conf->entity);
 
-	header("Location: ".$_SERVER["PHP_SELF"]."?mainmenu=home&leftmenu=setup");
+	header("Location: ".DOL_URL_ROOT."/onboading/admin/onboading.php?action=comenzar");
 	exit;
 }
 
@@ -496,8 +496,6 @@ if ($action == 'edit')
 
     print '<br><div class="center">';
     print '<input class="button" type="submit" name="save" value="'.$langs->trans("Save").'">';
-    print '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
-    print '<input class="button" type="submit" name="cancel" value="'.$langs->trans("Cancel").'">';
     print '</div>';
 
 	print '</form>';

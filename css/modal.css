@@ -152,6 +152,9 @@ Github: http://github.com/jorgechavz
   -webkit-animation-duration: 0.5s;
   -webkit-animation-name: fade-in;
 }
+
+
+
 .modal input:checked ~ .modal-overlay .modal-wrap {
   transform: translateY(0);
   z-index: 9999;

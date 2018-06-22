@@ -316,8 +316,8 @@ if (empty($reshook)) {
 				}
 				$db->commit();
 
-				header("Location: ".$_SERVER['PHP_SELF'].'?id='.$id);
-				exit;
+				header("Location: ".DOL_URL_ROOT."/onboading/admin/onboading.php?action=comenzar");
+	            exit;
 			}
 			else
 			{

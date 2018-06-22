@@ -229,7 +229,7 @@ if ( ($action == 'update' && ! GETPOST("cancel",'alpha'))
 
 	if ($action != 'updateedit' && ! $error)
 	{
-		header("Location: ".$_SERVER["PHP_SELF"]);
+		header("Location: ".DOL_URL_ROOT."/onboading/admin/onboading.php?action=comenzar");
 		exit;
 	}
 }
@@ -714,8 +714,6 @@ if ($action == 'edit' || $action == 'updateedit')
 
 	print '<br><div class="center">';
 	print '<input type="submit" class="button" name="save" value="'.$langs->trans("Save").'">';
-	print '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
-	print '<input type="submit" class="button" name="cancel" value="'.$langs->trans("Cancel").'">';
 	print '</div>';
 	print '<br>';
 

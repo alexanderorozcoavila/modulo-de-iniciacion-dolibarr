@@ -362,7 +362,7 @@ print ' <div class="modal">
                         </div>
                         <div class="div_text_modal_correo">
                             '.$modal_decode['init']['text1-correo'].'
-                            <br>
+                            <hr style="margin-top: -3px;visibility:hidden;">
                             <span class="modal_title_2">'.$modal_decode['init']['text2-correo'].'</span>
                         </div>
                         <div class="div_divider_modal_correo">
@@ -389,7 +389,7 @@ print ' <div class="modal">
                         </div>
                         <div class="div_text_modal_correo">
                             '.$modal_decode['init']['text1-empresa'].'
-                            <br>
+                            <hr style="margin-top: 10px;visibility:hidden;">
                             <span class="modal_title_2">'.$modal_decode['init']['text2-empresa'].'</span>
                         </div>
                         <div class="div_divider_modal_correo">
@@ -419,7 +419,7 @@ print ' <div class="modal">
                         </div>
                         <div class="div_text_modal_correo">
                             '.$modal_decode['init']['text1-equipo'].'
-                            <br>
+                            <hr style="margin-top: 10px;visibility:hidden;">
                             <span class="modal_title_2">'.$modal_decode['init']['text2-equipo'].'</span>
                         </div>
                         <div class="div_divider_modal_correo">

@@ -17,11 +17,11 @@
  */
 
 /**
- * 	\defgroup   onboading     Module MyModule
+ * 	\defgroup   onboarding     Module MyModule
  *  \brief      MyModule module descriptor.
  *
- *  \file       htdocs/onboading/core/modules/modOnboading.class.php
- *  \ingroup    onboading
+ *  \file       htdocs/onboarding/core/modules/modOnboarding.class.php
+ *  \ingroup    onboarding
  *  \brief      Description and activation file for module MyModule
  */
 include_once DOL_DOCUMENT_ROOT .'/core/modules/DolibarrModules.class.php';
@@ -33,7 +33,7 @@ include_once DOL_DOCUMENT_ROOT .'/core/modules/DolibarrModules.class.php';
 /**
  *  Description and activation class for module MyModule
  */
-class modOnboading extends DolibarrModules
+class modOnboarding extends DolibarrModules
 {
 	// @codingStandardsIgnoreEnd
 	/**
@@ -51,7 +51,7 @@ class modOnboading extends DolibarrModules
 		// Use here a free id (See in Home -> System information -> Dolibarr for list of used modules id).
 		$this->numero = 500000;		// TODO Go on page https://wiki.dolibarr.org/index.php/List_of_modules_id to reserve id number for your module
 		// Key text used to identify module (for permissions, menus, etc...)
-		$this->rights_class = 'onboading';
+		$this->rights_class = 'onboarding';
 
 		// Family can be 'crm','financial','hr','projects','products','ecm','technic','interface','other'
 		// It is used to group modules by family in module setup page
@@ -81,9 +81,9 @@ class modOnboading extends DolibarrModules
 		$this->picto='generic';
 
 		// Defined all module parts (triggers, login, substitutions, menus, css, etc...)
-		// for default path (eg: /onboading/core/xxxxx) (0=disable, 1=enable)
-		// for specific path of parts (eg: /onboading/core/modules/barcode)
-		// for specific css file (eg: /onboading/css/onboading.css.php)
+		// for default path (eg: /onboarding/core/xxxxx) (0=disable, 1=enable)
+		// for specific path of parts (eg: /onboarding/core/modules/barcode)
+		// for specific css file (eg: /onboarding/css/onboarding.css.php)
 		$this->module_parts = array(
 		                        	'triggers' => 1,                                 	// Set this to 1 if module has its own trigger directory (core/triggers)
 									'login' => 0,                                    	// Set this to 1 if module has its own login method directory (core/login)
@@ -93,17 +93,17 @@ class modOnboading extends DolibarrModules
 		                        	'tpl' => 0,                                      	// Set this to 1 if module overwrite template dir (core/tpl)
 									'barcode' => 0,                                  	// Set this to 1 if module has its own barcode directory (core/modules/barcode)
 									'models' => 0,                                   	// Set this to 1 if module has its own models directory (core/modules/xxx)
-									'css' => array('/onboading/css/onboading.css','/onboading/css/modal.css','/onboading/css/circle.css'),	// Set this to relative path of css file if module has its own css file
-	 								'js' => array('/onboading/js/onboading.js.php'),          // Set this to relative path of js file if module must load a js on all pages
+									'css' => array('/onboarding/css/onboarding.css','/onboarding/css/modal.css','/onboarding/css/circle.css'),	// Set this to relative path of css file if module has its own css file
+	 								'js' => array('/onboarding/js/onboarding.js.php'),          // Set this to relative path of js file if module must load a js on all pages
 									'hooks' => array('hookcontext1','hookcontext2') 	// Set here all hooks context managed by module. You can also set hook context 'all'
 		                        );
 
 		// Data directories to create when module is enabled.
-		// Example: this->dirs = array("/onboading/temp","/onboading/subdir");
+		// Example: this->dirs = array("/onboarding/temp","/onboarding/subdir");
 		$this->dirs = array();
 
-		// Config pages. Put here list of php page, stored into onboading/admin directory, to use to setup module.
-		$this->config_page_url = array("setup.php@onboading");
+		// Config pages. Put here list of php page, stored into onboarding/admin directory, to use to setup module.
+		$this->config_page_url = array("setup.php@onboarding");
 
 		// Dependencies
 		$this->hidden = false;			// A condition to hide module
@@ -112,7 +112,7 @@ class modOnboading extends DolibarrModules
 		$this->conflictwith = array();	// List of module class names as string this module is in conflict with
 		$this->phpmin = array(5,3);					// Minimum version of PHP required by module
 		$this->need_dolibarr_version = array(4,0);	// Minimum version of Dolibarr required by module
-		$this->langfiles = array("onboading@onboading");
+		$this->langfiles = array("onboarding@onboarding");
 		$this->warnings_activation = array();                     // Warning to show when we activate module. array('always'='text') or array('FR'='textfr','ES'='textes'...)
 		$this->warnings_activation_ext = array();                 // Warning to show when we activate an external module. array('always'='text') or array('FR'='textfr','ES'='textes'...)
 
@@ -126,8 +126,8 @@ class modOnboading extends DolibarrModules
 		);
 
 		// Array to add new pages in new tabs
-		// Example: $this->tabs = array('objecttype:+tabname1:Title1:mylangfile@onboading:$user->rights->onboading->read:/onboading/mynewtab1.php?id=__ID__',  					// To add a new tab identified by code tabname1
-        //                              'objecttype:+tabname2:SUBSTITUTION_Title2:mylangfile@onboading:$user->rights->othermodule->read:/onboading/mynewtab2.php?id=__ID__',  	// To add another new tab identified by code tabname2. Label will be result of calling all substitution functions on 'Title2' key.
+		// Example: $this->tabs = array('objecttype:+tabname1:Title1:mylangfile@onboarding:$user->rights->onboarding->read:/onboarding/mynewtab1.php?id=__ID__',  					// To add a new tab identified by code tabname1
+        //                              'objecttype:+tabname2:SUBSTITUTION_Title2:mylangfile@onboarding:$user->rights->othermodule->read:/onboarding/mynewtab2.php?id=__ID__',  	// To add another new tab identified by code tabname2. Label will be result of calling all substitution functions on 'Title2' key.
         //                              'objecttype:-tabname:NU:conditiontoremove');                                                     										// To remove an existing tab identified by code tabname
         // Can also be:	$this->tabs = array('data'=>'...', 'entity'=>0);
         //
@@ -153,17 +153,17 @@ class modOnboading extends DolibarrModules
 		// 'user'             to add a tab in user view
         $this->tabs = array();
 
-		if (! isset($conf->onboading) || ! isset($conf->onboading->enabled))
+		if (! isset($conf->onboarding) || ! isset($conf->onboarding->enabled))
         {
-        	$conf->onboading=new stdClass();
-        	$conf->onboading->enabled=0;
+        	$conf->onboarding=new stdClass();
+        	$conf->onboarding->enabled=0;
         }
 
         // Dictionaries
 		$this->dictionaries=array();
         /* Example:
         $this->dictionaries=array(
-            'langs'=>'mylangfile@onboading',
+            'langs'=>'mylangfile@onboarding',
             'tabname'=>array(MAIN_DB_PREFIX."table1",MAIN_DB_PREFIX."table2",MAIN_DB_PREFIX."table3"),		// List of tables we want to see into dictonnary editor
             'tablib'=>array("Table1","Table2","Table3"),													// Label of tables
             'tabsql'=>array('SELECT f.rowid as rowid, f.code, f.label, f.active FROM '.MAIN_DB_PREFIX.'table1 as f','SELECT f.rowid as rowid, f.code, f.label, f.active FROM '.MAIN_DB_PREFIX.'table2 as f','SELECT f.rowid as rowid, f.code, f.label, f.active FROM '.MAIN_DB_PREFIX.'table3 as f'),	// Request to select fields
@@ -172,23 +172,23 @@ class modOnboading extends DolibarrModules
             'tabfieldvalue'=>array("code,label","code,label","code,label"),																				// List of fields (list of fields to edit a record)
             'tabfieldinsert'=>array("code,label","code,label","code,label"),																			// List of fields (list of fields for insert)
             'tabrowid'=>array("rowid","rowid","rowid"),																									// Name of columns with primary key (try to always name it 'rowid')
-            'tabcond'=>array($conf->onboading->enabled,$conf->onboading->enabled,$conf->onboading->enabled)												// Condition to show each dictionary
+            'tabcond'=>array($conf->onboarding->enabled,$conf->onboarding->enabled,$conf->onboarding->enabled)												// Condition to show each dictionary
         );
         */
 
 
         // Boxes/Widgets
-		// Add here list of php file(s) stored in onboading/core/boxes that contains class to show a widget.
+		// Add here list of php file(s) stored in onboarding/core/boxes that contains class to show a widget.
         $this->boxes = array(
-        	0=>array('file'=>'onboadingwidget1.php@onboading','note'=>'Widget provided by MyModule','enabledbydefaulton'=>'Home'),
-        	//1=>array('file'=>'onboadingwidget2.php@onboading','note'=>'Widget provided by MyModule'),
-        	//2=>array('file'=>'onboadingwidget3.php@onboading','note'=>'Widget provided by MyModule')
+        	0=>array('file'=>'onboardingwidget1.php@onboarding','note'=>'Widget provided by MyModule','enabledbydefaulton'=>'Home'),
+        	//1=>array('file'=>'onboardingwidget2.php@onboarding','note'=>'Widget provided by MyModule'),
+        	//2=>array('file'=>'onboardingwidget3.php@onboarding','note'=>'Widget provided by MyModule')
         );
 
 
 		// Cronjobs (List of cron jobs entries to add when module is enabled)
 		$this->cronjobs = array(
-			0=>array('label'=>'MyJob label', 'jobtype'=>'method', 'class'=>'/onboading/class/onboadingmyjob.class.php', 'objectname'=>'MyModuleMyJob', 'method'=>'myMethod', 'parameters'=>'', 'comment'=>'Comment', 'frequency'=>2, 'unitfrequency'=>3600, 'status'=>0, 'test'=>true)
+			0=>array('label'=>'MyJob label', 'jobtype'=>'method', 'class'=>'/onboarding/class/onboardingmyjob.class.php', 'objectname'=>'MyModuleMyJob', 'method'=>'myMethod', 'parameters'=>'', 'comment'=>'Comment', 'frequency'=>2, 'unitfrequency'=>3600, 'status'=>0, 'test'=>true)
 		);
 		// Example: $this->cronjobs=array(0=>array('label'=>'My label', 'jobtype'=>'method', 'class'=>'/dir/class/file.class.php', 'objectname'=>'MyClass', 'method'=>'myMethod', 'parameters'=>'', 'comment'=>'Comment', 'frequency'=>2, 'unitfrequency'=>3600, 'status'=>0, 'test'=>true),
 		//                                1=>array('label'=>'My label', 'jobtype'=>'command', 'command'=>'', 'parameters'=>'', 'comment'=>'Comment', 'frequency'=>1, 'unitfrequency'=>3600*24, 'status'=>0, 'test'=>true)
@@ -202,22 +202,22 @@ class modOnboading extends DolibarrModules
 		$this->rights[$r][0] = $this->numero + $r;	// Permission id (must not be already used)
 		$this->rights[$r][1] = 'Read objects of My Module';	// Permission label
 		$this->rights[$r][3] = 1; 					// Permission by default for new user (0/1)
-		$this->rights[$r][4] = 'read';				// In php code, permission will be checked by test if ($user->rights->onboading->level1->level2)
-		$this->rights[$r][5] = '';				    // In php code, permission will be checked by test if ($user->rights->onboading->level1->level2)
+		$this->rights[$r][4] = 'read';				// In php code, permission will be checked by test if ($user->rights->onboarding->level1->level2)
+		$this->rights[$r][5] = '';				    // In php code, permission will be checked by test if ($user->rights->onboarding->level1->level2)
 
 		$r++;
 		$this->rights[$r][0] = $this->numero + $r;	// Permission id (must not be already used)
 		$this->rights[$r][1] = 'Create/Update objects of My Module';	// Permission label
 		$this->rights[$r][3] = 1; 					// Permission by default for new user (0/1)
-		$this->rights[$r][4] = 'create';				// In php code, permission will be checked by test if ($user->rights->onboading->level1->level2)
-		$this->rights[$r][5] = '';				    // In php code, permission will be checked by test if ($user->rights->onboading->level1->level2)
+		$this->rights[$r][4] = 'create';				// In php code, permission will be checked by test if ($user->rights->onboarding->level1->level2)
+		$this->rights[$r][5] = '';				    // In php code, permission will be checked by test if ($user->rights->onboarding->level1->level2)
 
 		$r++;
 		$this->rights[$r][0] = $this->numero + $r;	// Permission id (must not be already used)
 		$this->rights[$r][1] = 'Delete objects of My Module';	// Permission label
 		$this->rights[$r][3] = 1; 					// Permission by default for new user (0/1)
-		$this->rights[$r][4] = 'delete';				// In php code, permission will be checked by test if ($user->rights->onboading->level1->level2)
-		$this->rights[$r][5] = '';				    // In php code, permission will be checked by test if ($user->rights->onboading->level1->level2)
+		$this->rights[$r][4] = 'delete';				// In php code, permission will be checked by test if ($user->rights->onboarding->level1->level2)
+		$this->rights[$r][5] = '';				    // In php code, permission will be checked by test if ($user->rights->onboarding->level1->level2)
 
 
 		// Main menu entries
@@ -232,12 +232,12 @@ class modOnboading extends DolibarrModules
 								'type'=>'left',			                // This is a Top menu entry
 								'titre'=>'Inicio',
 								'mainmenu'=>'home',
-								'leftmenu'=>'onboading',
-								'url'=>'/onboading/admin/onboading.php',
-								'langs'=>'onboading@onboading',	        // Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
+								'leftmenu'=>'onboarding',
+								'url'=>'/onboarding/admin/onboarding.php',
+								'langs'=>'onboarding@onboarding',	        // Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
 								'position'=>1000+$r,
-								'enabled'=>'$conf->onboading->enabled',	// Define condition to show or hide menu entry. Use '$conf->onboading->enabled' if entry must be visible if module is enabled.
-								'perms'=>'1',			                // Use 'perms'=>'$user->rights->onboading->level1->level2' if you want your menu with a permission rules
+								'enabled'=>'$conf->onboarding->enabled',	// Define condition to show or hide menu entry. Use '$conf->onboarding->enabled' if entry must be visible if module is enabled.
+								'perms'=>'1',			                // Use 'perms'=>'$user->rights->onboarding->level1->level2' if you want your menu with a permission rules
 								'target'=>'',
 								'user'=>2);				                // 0=Menu for internal users, 1=external users, 2=both
 
@@ -245,28 +245,28 @@ class modOnboading extends DolibarrModules
 
 		// Example to declare a Left Menu entry into an existing Top menu entry:
 		/* BEGIN MODULEBUILDER LEFTMENU MYOBJECT
-		$this->menu[$r++]=array(	'fk_menu'=>'fk_mainmenu=onboading',	    // '' if this is a top menu. For left menu, use 'fk_mainmenu=xxx' or 'fk_mainmenu=xxx,fk_leftmenu=yyy' where xxx is mainmenucode and yyy is a leftmenucode
+		$this->menu[$r++]=array(	'fk_menu'=>'fk_mainmenu=onboarding',	    // '' if this is a top menu. For left menu, use 'fk_mainmenu=xxx' or 'fk_mainmenu=xxx,fk_leftmenu=yyy' where xxx is mainmenucode and yyy is a leftmenucode
 								'type'=>'left',			                // This is a Left menu entry
 								'titre'=>'List MyObject',
-								'mainmenu'=>'onboading',
-								'leftmenu'=>'onboading',
-								'url'=>'/onboading/myobject_list.php',
-								'langs'=>'onboading@onboading',	        // Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
+								'mainmenu'=>'onboarding',
+								'leftmenu'=>'onboarding',
+								'url'=>'/onboarding/myobject_list.php',
+								'langs'=>'onboarding@onboarding',	        // Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
 								'position'=>1000+$r,
-								'enabled'=>'$conf->onboading->enabled',  // Define condition to show or hide menu entry. Use '$conf->onboading->enabled' if entry must be visible if module is enabled. Use '$leftmenu==\'system\'' to show if leftmenu system is selected.
-								'perms'=>'1',			                // Use 'perms'=>'$user->rights->onboading->level1->level2' if you want your menu with a permission rules
+								'enabled'=>'$conf->onboarding->enabled',  // Define condition to show or hide menu entry. Use '$conf->onboarding->enabled' if entry must be visible if module is enabled. Use '$leftmenu==\'system\'' to show if leftmenu system is selected.
+								'perms'=>'1',			                // Use 'perms'=>'$user->rights->onboarding->level1->level2' if you want your menu with a permission rules
 								'target'=>'',
 								'user'=>2);				                // 0=Menu for internal users, 1=external users, 2=both
-		$this->menu[$r++]=array(	'fk_menu'=>'fk_mainmenu=onboading,fk_leftmenu=onboading',	    // '' if this is a top menu. For left menu, use 'fk_mainmenu=xxx' or 'fk_mainmenu=xxx,fk_leftmenu=yyy' where xxx is mainmenucode and yyy is a leftmenucode
+		$this->menu[$r++]=array(	'fk_menu'=>'fk_mainmenu=onboarding,fk_leftmenu=onboarding',	    // '' if this is a top menu. For left menu, use 'fk_mainmenu=xxx' or 'fk_mainmenu=xxx,fk_leftmenu=yyy' where xxx is mainmenucode and yyy is a leftmenucode
 								'type'=>'left',			                // This is a Left menu entry
 								'titre'=>'New MyObject',
-								'mainmenu'=>'onboading',
-								'leftmenu'=>'onboading',
-								'url'=>'/onboading/myobject_page.php?action=create',
-								'langs'=>'onboading@onboading',	        // Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
+								'mainmenu'=>'onboarding',
+								'leftmenu'=>'onboarding',
+								'url'=>'/onboarding/myobject_page.php?action=create',
+								'langs'=>'onboarding@onboarding',	        // Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
 								'position'=>1000+$r,
-								'enabled'=>'$conf->onboading->enabled',  // Define condition to show or hide menu entry. Use '$conf->onboading->enabled' if entry must be visible if module is enabled. Use '$leftmenu==\'system\'' to show if leftmenu system is selected.
-								'perms'=>'1',			                // Use 'perms'=>'$user->rights->onboading->level1->level2' if you want your menu with a permission rules
+								'enabled'=>'$conf->onboarding->enabled',  // Define condition to show or hide menu entry. Use '$conf->onboarding->enabled' if entry must be visible if module is enabled. Use '$leftmenu==\'system\'' to show if leftmenu system is selected.
+								'perms'=>'1',			                // Use 'perms'=>'$user->rights->onboarding->level1->level2' if you want your menu with a permission rules
 								'target'=>'',
 								'user'=>2);				                // 0=Menu for internal users, 1=external users, 2=both
 		END MODULEBUILDER LEFTMENU MYOBJECT */
@@ -281,7 +281,7 @@ class modOnboading extends DolibarrModules
 		$this->export_label[$r]='MyModule';	                         // Translation key (used only if key ExportDataset_xxx_z not found)
         $this->export_enabled[$r]='1';                               // Condition to show export in list (ie: '$user->id==3'). Set to 1 to always show when module is enabled.
         $this->export_icon[$r]='generic:MyModule';					 // Put here code of icon then string for translation key of module name
-		//$this->export_permission[$r]=array(array("onboading","level1","level2"));
+		//$this->export_permission[$r]=array(array("onboarding","level1","level2"));
         $this->export_fields_array[$r]=array('t.rowid'=>"Id",'t.ref'=>'Ref','t.label'=>'Label','t.datec'=>"DateCreation",'t.tms'=>"DateUpdate");
 		$this->export_TypeFields_array[$r]=array('t.rowid'=>'Numeric', 't.ref'=>'Text', 't.label'=>'Label', 't.datec'=>"Date", 't.tms'=>"Date");
 		// $this->export_entities_array[$r]=array('t.rowid'=>"company",'s.nom'=>'company','s.address'=>'company','s.zip'=>'company','s.town'=>'company','s.fk_pays'=>'company','s.phone'=>'company','s.siren'=>'company','s.siret'=>'company','s.ape'=>'company','s.idprof4'=>'company','s.code_compta'=>'company','s.code_compta_fournisseur'=>'company','f.rowid'=>"invoice",'f.facnumber'=>"invoice",'f.datec'=>"invoice",'f.datef'=>"invoice",'f.total'=>"invoice",'f.total_ttc'=>"invoice",'f.tva'=>"invoice",'f.paye'=>"invoice",'f.fk_statut'=>'invoice','f.note'=>"invoice",'fd.rowid'=>'invoice_line','fd.description'=>"invoice_line",'fd.price'=>"invoice_line",'fd.total_ht'=>"invoice_line",'fd.total_tva'=>"invoice_line",'fd.total_ttc'=>"invoice_line",'fd.tva_tx'=>"invoice_line",'fd.qty'=>"invoice_line",'fd.date_start'=>"invoice_line",'fd.date_end'=>"invoice_line",'fd.fk_product'=>'product','p.ref'=>'product');
@@ -306,7 +306,7 @@ class modOnboading extends DolibarrModules
 	{
 		$sql = array();
 
-		$this->_load_tables('/onboading/sql/');
+		$this->_load_tables('/onboarding/sql/');
 
 		// Create extrafields
 		include_once DOL_DOCUMENT_ROOT.'/core/class/extrafields.class.php';

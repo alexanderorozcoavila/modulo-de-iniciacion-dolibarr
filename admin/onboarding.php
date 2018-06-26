@@ -39,12 +39,12 @@ if (! $res) die("Include of main fails");
 // Libraries
 require_once DOL_DOCUMENT_ROOT.'/core/lib/admin.lib.php';
 require_once DOL_DOCUMENT_ROOT.'/core/lib/functions2.lib.php';
-require_once '../lib/onboading.lib.php';
+require_once '../lib/onboarding.lib.php';
 
 // Translations
 $langs->load("errors");
 $langs->load("admin");
-$langs->load("onboading@onboading");
+$langs->load("onboarding@onboarding");
 
 // Access control
 // if (! $user->admin) {
@@ -67,16 +67,16 @@ $action = GETPOST('action', 'alpha');
 
 $form = new Form($db);
 
-$page_name = "Onboading";
+$page_name = "Onboarding";
 llxHeader('', $langs->trans($page_name));
 print "<style>@import url('https://fonts.googleapis.com/css?family='Roboto', sans-serif  !important;');</style>";
 
 // Configuration header
-//$head = onboadingAdminPrepareHead();
+//$head = onboardingAdminPrepareHead();
 //dol_fiche_head(
 //	$head,
 //	'about',
-//	$langs->trans("Onboading"),
+//	$langs->trans("Onboarding"),
 //	0,
 //	'mymodule@mymodule'
 //);
@@ -534,8 +534,8 @@ print ' <div class="modal">
         </div>
       </div>';
 
-dol_include_once('/onboading/core/modules/modOnboading.class.php');
-$tmpmodule = new modOnboading($db);
+dol_include_once('/onboarding/core/modules/modOnboarding.class.php');
+$tmpmodule = new modOnboarding($db);
 
 // Page end
 dol_fiche_end();

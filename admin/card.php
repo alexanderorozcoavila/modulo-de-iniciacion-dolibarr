@@ -85,10 +85,10 @@ $access_json = file_get_contents("../config/access.json");
 $access_json_decode = json_decode($access_json, true);
 
 $acceso_user = false;
-$grupo_onboading = $access_json_decode['group']['1'];
+$grupo_onboarding = $access_json_decode['group']['1'];
 
 foreach($re_gruop as $key=>$val) {
-	if($val->nom == $grupo_onboading){
+	if($val->nom == $grupo_onboarding){
 		$acceso_user = true;
 	}
 }
@@ -316,7 +316,7 @@ if (empty($reshook)) {
 				}
 				$db->commit();
 
-				header("Location: ".DOL_URL_ROOT."/onboading/admin/onboading.php?action=comenzar");
+				header("Location: ".DOL_URL_ROOT."/onboarding/admin/onboarding.php?action=comenzar");
 	            exit;
 			}
 			else
